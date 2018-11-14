@@ -1,8 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[个人博客--NEXT主题优化]]></title>
+    <url>%2F2018%2F11%2F14%2Fblog%2F</url>
+    <content type="text"><![CDATA[目录1.实用性优化 基本使用（_config.yml文件配置） 添加RSS 添加标签、分类等页面 设置网站icon 添加侧边栏社交链接 添加侧边栏友情链接 底部显示建站时间和图标的修改 微信支付宝打赏功能 关闭网站动画效果 设置第三方JS库 添加评论系统 统计访客量以及文章阅读量 阅读次数统计（基于LanCloud） 字数统计 增加版权信息 添加文章分享功能 文章排序优先级设置 添加站内搜索功能 DaoVoice在线联系 2.个性化优化 设置字体 设置代码高亮主题 左上角或右上角的Github样式 添加背景动画 添加顶部加载条 点击出现小爱心效果 修改文章链接文本样式 修改文章底部标签样式 文章末尾统一添加“文本结束”标记 修改作者头像并旋转 文章添加阴影效果 修改打赏部分字体动画 自定义鼠标样式 添加看板娘 正文 以下修改保存后均可通过hexo g &amp;&amp; hexo s指令在本地http://localhost:4000 查看修改，另外通过hexo d发布到GitHub pages 或 Coding pages上面通过绑定的域名在线查看效果。 实用性优化基本使用在Hexo中有两个很重要的名为’_config.yml’的文件，其中一个在站点安装的根目录下，另一个在主题目录下。前者提供了Hexo自身的一些基本配置信息，后者为你所安装的主题的相关配置。为了方便区分，我们把前者称为站点配置文件，后者称为主题配置文件。 站点配置文件 文件路径站点根目录/_config.yml，编辑软件推荐使用Sublime Text 。这里贴一下个人的部分配置，可以改一下相关内容自行体会一下效果： 1234567# Sitetitle: Alvabillsubtitle: Stay Hungry, Stay Foolishauthor: Alvabilldescription: &quot;Alvabill个人站，主要涉及前端知识共享、实践教程、前沿技术共同学习等方面&quot; #网站描述 SEOlanguage: entimezone: Asia/Shanghai “title”：博客的名称。“subtitle”：根据主题的不同，有的会显示有的不会显示。“description”：主要用于SEO，告诉搜索引擎一个关于站点的简单描述，通常建议在其中包含网站的关键词。“author”：作者名称，用于主题显示文章的作者。“language”：语言会对应的解析正在应用的主题中的languages文件夹下的不同语言文件。所以这里的名称要和languages文件夹下的语言文件名称一致。“timezone”：可不填写。123456# URL## If your site is put in a subdirectory, set url as &apos;http://yoursite.com/child&apos; and root as &apos;/child/&apos;url: http://alvabill.mlroot: /permalink: :title/permalink_defaults: “url”：一般填写自己的站点链接。“root”：设置根目录的位置。如果你的网站存放在子目录中，例如 http://yoursite.com/blog ,则应该将你的 url 设为http://yoursite.com/blog 并把 root 设为 /blog/。“permalink”：生成的链接的格式。带井号的是默认的格式，带有日期感觉怪怪的，改成了自己喜欢的格式。规则也比较简单，标签前面要加英文冒号。“permalink_defaults”: 生成链接中各部分的默认值1234567891011# Directorysource_dir: sourcepublic_dir: publictag_dir: tagsarchive_dir: archivescategory_dir: categoriescode_dir: downloads/codei18n_dir: :langskip_render: - README.md - CNAME 目录一般不需要修改，这里需要改动的是skip_render，跳过指定文件的渲染，这里写上去着两个文件名便可，在上一篇文章中已经详细描述过这里就不累赘了。123456789101112131415# Writingnew_post_name: :title.md # File name of new postsdefault_layout: posttitlecase: false # Transform title into titlecaseexternal_link: true # Open external links in new tabfilename_case: 0render_drafts: falsepost_asset_folder: falserelative_link: falsefuture: truehighlight: enable: true line_number: true auto_detect: false tab_replace: 书写相关的设置“new_post_name”：新的博文的文件名“default_layout:“ 默认布局“filename_case: 0“ #把文件名称转换为 (1) 小写或 (2) 大写“render_drafts: false“ 是否显示草稿“post_asset_folder: false“ #是否启动资源文件夹“relative_link: false“ #把链接改为与根目录的相对位址“future: true ““highlight:“ #代码块的设置，Hexo自带的代码高亮插件1234# Category &amp; Tagdefault_category: uncategorizedcategory_map:tag_map: 分类和标签的设置“default_category”：如果撰写文章时没有设置分类，默认的分类选择。“category_map”：用于映射分类的别名。“tag_map”：用法和分类别名是一样的。123456789101112# Extensions## Plugins: https://hexo.io/plugins/## Themes: https://hexo.io/themes/theme: next# Deployment## Docs: https://hexo.io/docs/deployment.htmldeploy: type: git repository: github: git@github.com:Alvabill/Alvabill.github.io.git,master coding: git@git.coding.net:Alvabill/Alvabill.git,master “theme”：主题拓展，可以在主题商店选择其他主题，这里使用next“deploy”：部署方式，前文已经详细描述，不再累赘。]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>blog</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Adobe软件]]></title>
+    <url>%2F2018%2F11%2F14%2FAdobe%E8%BD%AF%E4%BB%B6%2F</url>
+    <content type="text"><![CDATA[Adobe旗下软件 Adobe PS: Adobe PS: Adobe PS: Adobe PS: Adobe PS: Adobe PS: Adobe PS:]]></content>
+      <categories>
+        <category>tool</category>
+      </categories>
+      <tags>
+        <tag>软件工具</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[电脑杀毒软件]]></title>
+    <url>%2F2018%2F11%2F13%2F%E7%94%B5%E8%84%91%E6%9D%80%E6%AF%92%E8%BD%AF%E4%BB%B6%2F</url>
+    <content type="text"><![CDATA[电脑杀毒软件 很多人电脑里面安装360、电脑管家、瑞星、百度、金山卫士，甚至有些人安装好几个，还说电脑卡！这些个杀毒软件彼此之间干架，占用大量的CPU，请问怎么会不卡？？我个人有360洁癖！只要是360公司的软件，我都不会使用！更别说在电脑安装360的软件了，在我看来，360简直就是流氓垃圾！我推荐火绒这个软件，个人版免费，不会乱篡改任何东西，甚至外来软件安装都会请求同意，真的是业界良心软件！ 火绒：https://www.huorong.cn/]]></content>
+      <categories>
+        <category>tool</category>
+      </categories>
+      <tags>
+        <tag>软件工具</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[博客模板以及MD语法]]></title>
     <url>%2F2018%2F05%2F22%2Ffirst%2F</url>
     <content type="text"></content>
+      <categories>
+        <category>texe</category>
+      </categories>
   </entry>
 </search>
