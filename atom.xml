@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-11-14T07:11:20.154Z</updated>
+  <updated>2018-12-03T14:13:07.910Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -18,19 +18,43 @@
   
   <entry>
     <title>个人博客--NEXT主题优化</title>
-    <link href="http://yoursite.com/2018/11/14/blog/"/>
-    <id>http://yoursite.com/2018/11/14/blog/</id>
-    <published>2018-11-14T06:34:01.000Z</published>
-    <updated>2018-11-14T07:11:20.154Z</updated>
+    <link href="http://yoursite.com/2018/12/14/blog02/"/>
+    <id>http://yoursite.com/2018/12/14/blog02/</id>
+    <published>2018-12-14T06:34:01.000Z</published>
+    <updated>2018-12-03T14:13:07.910Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><h2 id="1-实用性优化"><a href="#1-实用性优化" class="headerlink" title="1.实用性优化"></a>1.实用性优化</h2><blockquote><ul><li>基本使用（_config.yml文件配置）</li><li>添加RSS</li><li>添加标签、分类等页面</li><li>设置网站icon</li><li>添加侧边栏社交链接</li><li>添加侧边栏友情链接</li><li>底部显示建站时间和图标的修改</li><li>微信支付宝打赏功能</li><li>关闭网站动画效果</li><li>设置第三方JS库</li><li>添加评论系统</li><li>统计访客量以及文章阅读量</li><li>阅读次数统计（基于LanCloud）</li><li>字数统计</li><li>增加版权信息</li><li>添加文章分享功能</li><li>文章排序优先级设置</li><li>添加站内搜索功能</li><li>DaoVoice在线联系</li></ul></blockquote><h2 id="2-个性化优化"><a href="#2-个性化优化" class="headerlink" title="2.个性化优化"></a>2.个性化优化</h2><blockquote><ul><li>设置字体</li><li>设置代码高亮主题</li><li>左上角或右上角的Github样式</li><li>添加背景动画</li><li>添加顶部加载条</li><li>点击出现小爱心效果</li><li>修改文章链接文本样式</li><li>修改文章底部标签样式</li><li>文章末尾统一添加“文本结束”标记</li><li>修改作者头像并旋转</li><li>文章添加阴影效果</li><li>修改打赏部分字体动画</li><li>自定义鼠标样式</li><li>添加看板娘</li></ul></blockquote><h1 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h1><blockquote><p>以下修改保存后均可通过hexo g &amp;&amp; hexo s指令在本地<a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a> 查看修改，另外通过hexo d发布到GitHub pages 或 Coding pages上面通过绑定的域名在线查看效果。</p></blockquote><hr><h2 id="实用性优化"><a href="#实用性优化" class="headerlink" title="实用性优化"></a>实用性优化</h2><h3 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h3><p>在Hexo中有两个很重要的名为’_config.yml’的文件，其中一个在站点安装的根目录下，另一个在主题目录下。前者提供了Hexo自身的一些基本配置信息，后者为你所安装的主题的相关配置。为了方便区分，我们把前者称为<em>站点配置文件</em>，后者称为<em>主题配置文件</em>。</p><h3 id="站点配置文件"><a href="#站点配置文件" class="headerlink" title="站点配置文件"></a>站点配置文件</h3><blockquote><p>文件路径站点根目录/_config.yml，编辑软件推荐使用Sublime Text 。<br>这里贴一下个人的部分配置，可以改一下相关内容自行体会一下效果：</p></blockquote><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># Site</span><br><span class="line">title: Alvabill</span><br><span class="line">subtitle: Stay Hungry, Stay Foolish</span><br><span class="line">author: Alvabill</span><br><span class="line">description: &quot;Alvabill个人站，主要涉及前端知识共享、实践教程、前沿技术共同学习等方面&quot;  #网站描述 SEO</span><br><span class="line">language: en</span><br><span class="line">timezone: Asia/Shanghai</span><br></pre></td></tr></table></figure><blockquote><p>“title”：博客的名称。<br>“subtitle”：根据主题的不同，有的会显示有的不会显示。<br>“description”：主要用于SEO，告诉搜索引擎一个关于站点的简单描述，通常建议在其中包含网站的关键词。<br>“author”：作者名称，用于主题显示文章的作者。<br>“language”：语言会对应的解析正在应用的主题中的languages文件夹下的不同语言文件。所以这里的名称要和languages文件夹下的语言文件名称一致。<br>“timezone”：可不填写。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># URL</span><br><span class="line">## If your site is put in a subdirectory, set url as &apos;http://yoursite.com/child&apos; and root as &apos;/child/&apos;</span><br><span class="line">url: http://alvabill.ml</span><br><span class="line">root: /</span><br><span class="line">permalink: :title/</span><br><span class="line">permalink_defaults:</span><br></pre></td></tr></table></figure></p></blockquote><blockquote><p>“url”：一般填写自己的站点链接。<br>“root”：设置根目录的位置。如果你的网站存放在子目录中，例如 <a href="http://yoursite.com/blog">http://yoursite.com/blog</a>  ,则应该将你的 url 设为<a href="http://yoursite.com/blog">http://yoursite.com/blog</a>  并把 root 设为 /blog/。<br>“permalink”：生成的链接的格式。带井号的是默认的格式，带有日期感觉怪怪的，改成了自己喜欢的格式。规则也比较简单，标签前面要加英文冒号。<br>“permalink_defaults”: 生成链接中各部分的默认值<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"># Directory</span><br><span class="line">source_dir: source</span><br><span class="line">public_dir: public</span><br><span class="line">tag_dir: tags</span><br><span class="line">archive_dir: archives</span><br><span class="line">category_dir: categories</span><br><span class="line">code_dir: downloads/code</span><br><span class="line">i18n_dir: :lang</span><br><span class="line">skip_render:</span><br><span class="line">  - README.md</span><br><span class="line">  - CNAME</span><br></pre></td></tr></table></figure></p></blockquote><blockquote><p>目录一般不需要修改，这里需要改动的是skip_render，跳过指定文件的渲染，这里写上去着两个文件名便可，在上一篇文章中已经详细描述过这里就不累赘了。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"># Writing</span><br><span class="line">new_post_name: :title.md # File name of new posts</span><br><span class="line">default_layout: post</span><br><span class="line">titlecase: false # Transform title into titlecase</span><br><span class="line">external_link: true # Open external links in new tab</span><br><span class="line">filename_case: 0</span><br><span class="line">render_drafts: false</span><br><span class="line">post_asset_folder: false</span><br><span class="line">relative_link: false</span><br><span class="line">future: true</span><br><span class="line">highlight:</span><br><span class="line">  enable: true</span><br><span class="line">  line_number: true</span><br><span class="line">  auto_detect: false</span><br><span class="line">  tab_replace:</span><br></pre></td></tr></table></figure></p></blockquote><blockquote><p>书写相关的设置<br>“new_post_name”：新的博文的文件名<br>“default_layout:“ 默认布局<br>“filename_case: 0“ #把文件名称转换为 (1) 小写或 (2) 大写<br>“render_drafts: false“ 是否显示草稿<br>“post_asset_folder: false“ #是否启动资源文件夹<br>“relative_link: false“ #把链接改为与根目录的相对位址<br>“future: true “<br>“highlight:“ #代码块的设置，Hexo自带的代码高亮插件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># Category &amp; Tag</span><br><span class="line">default_category: uncategorized</span><br><span class="line">category_map:</span><br><span class="line">tag_map:</span><br></pre></td></tr></table></figure></p></blockquote><blockquote><p>分类和标签的设置<br>“default_category”：如果撰写文章时没有设置分类，默认的分类选择。<br>“category_map”：用于映射分类的别名。<br>“tag_map”：用法和分类别名是一样的。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"># Extensions</span><br><span class="line">## Plugins: https://hexo.io/plugins/</span><br><span class="line">## Themes: https://hexo.io/themes/</span><br><span class="line">theme: next</span><br><span class="line"></span><br><span class="line"># Deployment</span><br><span class="line">## Docs: https://hexo.io/docs/deployment.html</span><br><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repository:</span><br><span class="line">    github: git@github.com:Alvabill/Alvabill.github.io.git,master</span><br><span class="line">    coding: git@git.coding.net:Alvabill/Alvabill.git,master</span><br></pre></td></tr></table></figure></p></blockquote><blockquote><p>“theme”：主题拓展，可以在主题商店选择其他主题，这里使用next<br>“deploy”：部署方式，前文已经详细描述，不再累赘。</p></blockquote>]]></content>
+    <content type="html"><![CDATA[<p>精彩内容马上上线</p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;h1 id=&quot;目录&quot;&gt;&lt;a href=&quot;#目录&quot; class=&quot;headerlink&quot; title=&quot;目录&quot;&gt;&lt;/a&gt;目录&lt;/h1&gt;&lt;h2 id=&quot;1-实用性优化&quot;&gt;&lt;a href=&quot;#1-实用性优化&quot; class=&quot;headerlink&quot; title=&quot;1.实用性优化&quot;&gt;&lt;/
+        &lt;p&gt;精彩内容马上上线&lt;/p&gt;
+
       
+    
+    </summary>
+    
+      <category term="前端" scheme="http://yoursite.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="blog" scheme="http://yoursite.com/tags/blog/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>个人博客--基于HEXO + Git + github搭建个人博客</title>
+    <link href="http://yoursite.com/2018/12/03/blog01/"/>
+    <id>http://yoursite.com/2018/12/03/blog01/</id>
+    <published>2018-12-03T14:13:20.000Z</published>
+    <updated>2018-12-03T14:13:34.339Z</updated>
+    
+    <content type="html"><![CDATA[<p><code>搭建个人博客不是很难，完全免费，若要逼格高一点的话，可以花一点小钱，买一个域名。</code></p><p>相信很多计算机专业的道友们都想有一个属于自己的博客吧（至少我在此之前很想），本文将带领大家搭建一个属于自己的博客！虽然网上有很多教程，但是我在自己做的时候就莫名其妙的跳过好多坑！!经过不懈的努力，终于大功告成！个人目前还是很满意的！<br><a id="more"></a></p><blockquote><p>申明：本教程仅仅针对windows用户！！</p></blockquote><h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><h3 id="安装软件"><a href="#安装软件" class="headerlink" title="安装软件"></a>安装软件</h3><h4 id="Git安装"><a href="#Git安装" class="headerlink" title="Git安装"></a>Git安装</h4><h4 id="Hexo安装"><a href="#Hexo安装" class="headerlink" title="Hexo安装"></a>Hexo安装</h4><h4 id="NodeJs安装"><a href="#NodeJs安装" class="headerlink" title="NodeJs安装"></a>NodeJs安装</h4><h3 id="更该主题"><a href="#更该主题" class="headerlink" title="更该主题"></a>更该主题</h3><h3 id="github注册"><a href="#github注册" class="headerlink" title="github注册"></a>github注册</h3><h4 id="账号注册"><a href="#账号注册" class="headerlink" title="账号注册"></a>账号注册</h4><h4 id="创建仓库"><a href="#创建仓库" class="headerlink" title="创建仓库"></a>创建仓库</h4><h3 id="上传到仓库"><a href="#上传到仓库" class="headerlink" title="上传到仓库"></a>上传到仓库</h3><h3 id="域名申请"><a href="#域名申请" class="headerlink" title="域名申请"></a>域名申请</h3><h3 id="域名绑定Page服务"><a href="#域名绑定Page服务" class="headerlink" title="域名绑定Page服务"></a>域名绑定Page服务</h3><h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="Git安装-1"><a href="#Git安装-1" class="headerlink" title="Git安装"></a>Git安装</h3><blockquote><ul><li>根据自己电脑系统下载安装[git][1]，安装就选择傻瓜式安装。如果想学习更多git，点击[Git教程][2]，本文仅用到不多的几条命令！</li></ul></blockquote><h3 id="NodeJs安装-1"><a href="#NodeJs安装-1" class="headerlink" title="NodeJs安装"></a>NodeJs安装</h3><blockquote><ul><li>下载安装[NodeJs][3],推荐下载左面稳定版！这是[NodeJs简介][4]。</li><li>推荐下载安装到D盘，记住安装路径，一般情况下安装目录为<code>D:\Program Files\nodejs\</code></li><li>安装完成后按Win+R，输入cmd打开控制台输入一下代码检查安装是否正确完成：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">node -v</span><br><span class="line">npm -v</span><br></pre></td></tr></table></figure></li></ul></blockquote><ul><li>出现以下情况则表示正确安装<br><img src="http://piurh3b8q.bkt.clouddn.com/Snipaste_2018-12-03_18-00-54.png" alt=""><h3 id="Hexo安装-1"><a href="#Hexo安装-1" class="headerlink" title="Hexo安装"></a>Hexo安装</h3><blockquote><ol><li>在任意一个地方新建一个文件夹，命名为“blog”作为我们的博客的本地文件，比如我是在E盘根目录下键的。</li></ol></blockquote></li></ul><ol start="2"><li>打开文件夹，鼠标右键选择“Git Bash Here”，打开git控制台，输入命令开始安装<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli #安装hexo脚手架</span><br></pre></td></tr></table></figure></li></ol><ul><li>出现下图内容，表示安装正确<br><img src="http://piurh3b8q.bkt.clouddn.com/1.png" alt=""></li></ul><hr><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init #Hexo自动在当前文件夹下下载搭建网站所需的所有文件</span><br></pre></td></tr></table></figure><ul><li>出现下图内容，表示安装正确<br><img src="http://piurh3b8q.bkt.clouddn.com/2.png" alt=""></li></ul><hr><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install #安装依赖包</span><br></pre></td></tr></table></figure><ul><li>出现下图内容，表示安装正确<br><img src="http://piurh3b8q.bkt.clouddn.com/3.png" alt=""></li></ul><hr><p>到此为止，如果一路顺利，那么恭喜你，你的个人博客已经生成！<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g #完整命令为hexo generate，生成静态文件</span><br></pre></td></tr></table></figure></p><ul><li>出现下图内容，表示安装正确<br><img src="http://piurh3b8q.bkt.clouddn.com/4.png" alt=""></li></ul><hr><blockquote><p>接下来就是本地预览你的博客！<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s #完整命令为hexo server，启动服务器，用来本地预览</span><br></pre></td></tr></table></figure></p></blockquote><p><img src="http://piurh3b8q.bkt.clouddn.com/6.png" alt=""></p><hr><blockquote><p>此时，我们的博客是不怎么美光，接下来我们给它换个主题。<br>在刚刚的git控制台里面输入代码以下代码，下载theme主题。在此之前，需要按住 “ctrl+c”停止服务器。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/iissnan/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure></p></blockquote><blockquote><p>打开E:\hexo，用你喜欢的编程软件打开 _config.yml 文件，ctrl+f 搜索 theme 关键字，修改为以下代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">theme: next</span><br></pre></td></tr></table></figure></p></blockquote><h3 id="github注册-1"><a href="#github注册-1" class="headerlink" title="github注册"></a>github注册</h3><blockquote><p>现在我们的博客仅仅在本地运行，接下来我们就要将它上传的互联网，让小伙伴们观赏我们的博客！</p></blockquote><h4 id="注册账号"><a href="#注册账号" class="headerlink" title="注册账号"></a>注册账号</h4><blockquote><ul><li>如果你有github账号，可以直接跳过这一步。[github官网][5]。</li><li>在此处填写信息注册github账号。</li></ul></blockquote><p><img src="http://piurh3b8q.bkt.clouddn.com/7.png" alt=""></p><h4 id="创建仓库-1"><a href="#创建仓库-1" class="headerlink" title="创建仓库"></a>创建仓库</h4><blockquote><p>1.点击 “new repository” 按钮创建一个新的仓库</p></blockquote><p><img src="http://piurh3b8q.bkt.clouddn.com/8.png" alt=""></p><blockquote><p>2.你仓库的名字必须是你的github的名字+  .github.io</p><blockquote><blockquote><p>比如我的 github 名字是 <strong>Dylan1201</strong>，那么我的仓库名字就是 <strong>Dylan1201.github.io</strong><br>下面的public也要选中</p></blockquote></blockquote></blockquote><blockquote><p>由于我已经创建了一个该名字的仓库，所以不能创建第二个，所以ta给我提示红色框里面的东西。<br>然后点击 “Creating repository” 按钮完成创建。</p></blockquote><p><img src="http://piurh3b8q.bkt.clouddn.com/9.png" alt=""></p><h4 id="配置SSH"><a href="#配置SSH" class="headerlink" title="配置SSH"></a>配置SSH</h4><blockquote><p>继续在git里面提交代码 <code>ssh-keygen -t rsa -C &quot;你的邮件地址&quot;</code>,引号里面的内容输入你的邮箱地址，然后回车，会提示你文件保存的路径，这时候按回车键确认，然后会提示你输入密码，输入即可（输入密码是看不到的），然后会确认输入一次，就可以在刚刚的路径看到生成了两个文件，一个是id_rsa，另一个是id_rsa.pub，用sublime打开id_rsa.pub然后选中里面的全部内容，复制下来。<br>打开github，点击右上角小图标，选择 “settings” 按钮。</p></blockquote><p><img src="http://piurh3b8q.bkt.clouddn.com/10.png" alt=""></p><blockquote><p>在左面菜单栏中选择 “SSH and GPG keys” 按钮，再点击 “new SSH key” 按钮，“title” 随意填写，将刚刚赋值的代码粘贴到“key”中，然后点击 “add SSH key” 按钮完成公钥添加。</p></blockquote><p><img src="http://piurh3b8q.bkt.clouddn.com/11.png" alt=""><br><img src="http://piurh3b8q.bkt.clouddn.com/12.png" alt=""></p><h3 id="上传到仓库-1"><a href="#上传到仓库-1" class="headerlink" title="上传到仓库"></a>上传到仓库</h3><blockquote><p>打开E:\hexo，用你喜欢的编程软件打开_config.yml文件，文件最后可以看到</p></blockquote><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type:</span><br></pre></td></tr></table></figure><p>修改为一下内容，主意，将连接修改为你的连接<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repository: git@github.com:yourname/yourname.github.io.git   #发布到github</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure></p><p>在E:/blog 根目录下右键打开“Gti Bash here”，输入以下命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d &amp;&amp; hexo g</span><br></pre></td></tr></table></figure></p><p>如果出现以下提示<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ERROR Deployer not found: git</span><br></pre></td></tr></table></figure></p><p>输入以下命令,然后再输入上面的命令</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure><p>这时候如果弹出一个对话框，输入在github上面的用户名和密码即可。<br>现在我们就可以在浏览器中输入网址：<a href="https://yourname.github.io" target="_blank" rel="noopener">https://yourname.github.io</a> 来查看自己的博客了。</p><h3 id="域名申请，请看我的另一篇文章，此处火箭直达！-这也是搭建个人博客唯一需要花钱的地方"><a href="#域名申请，请看我的另一篇文章，此处火箭直达！-这也是搭建个人博客唯一需要花钱的地方" class="headerlink" title="域名申请，请看我的另一篇文章，此处火箭直达！(这也是搭建个人博客唯一需要花钱的地方)"></a>域名申请，请看我的另一篇文章，此处火箭直达！(这也是搭建个人博客唯一需要花钱的地方)</h3><h3 id="域名绑定Page服务-1"><a href="#域名绑定Page服务-1" class="headerlink" title="域名绑定Page服务"></a>域名绑定Page服务</h3><blockquote><p>解析一个你喜欢的域名，比如<a href="http://www.123abc.或者blog.123abc.com,然后打开github你刚刚创建的仓库，点击上面的" target="_blank" rel="noopener">www.123abc.或者blog.123abc.com,然后打开github你刚刚创建的仓库，点击上面的</a> “settings” 按钮<br><img src="http://piurh3b8q.bkt.clouddn.com/13.png" alt=""><br>在下面找到“GitHub Pages”，在这个地方添加你解析的域名保存即可。<br><img src="http://piurh3b8q.bkt.clouddn.com/14.png" alt=""><br>现在你就可以访问域名来访问你的博客了！！<br>  [1]: <a href="https://git-scm.com/" target="_blank" rel="noopener">https://git-scm.com/</a><br>  [2]: <a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000" target="_blank" rel="noopener">https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000</a><br>  [3]: <a href="https://nodejs.org/en/" target="_blank" rel="noopener">https://nodejs.org/en/</a><br>  [4]: <a href="https://www.cnblogs.com/fang-beny/p/4778591.html" target="_blank" rel="noopener">https://www.cnblogs.com/fang-beny/p/4778591.html</a><br>  [5]: <a href="https://github.com/" target="_blank" rel="noopener">https://github.com/</a></p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;code&gt;搭建个人博客不是很难，完全免费，若要逼格高一点的话，可以花一点小钱，买一个域名。&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;相信很多计算机专业的道友们都想有一个属于自己的博客吧（至少我在此之前很想），本文将带领大家搭建一个属于自己的博客！虽然网上有很多教程，但是我在自己做的时候就莫名其妙的跳过好多坑！!经过不懈的努力，终于大功告成！个人目前还是很满意的！&lt;br&gt;
     
     </summary>
     
@@ -46,13 +70,13 @@
     <link href="http://yoursite.com/2018/11/14/Adobe%E8%BD%AF%E4%BB%B6/"/>
     <id>http://yoursite.com/2018/11/14/Adobe软件/</id>
     <published>2018-11-13T16:00:00.000Z</published>
-    <updated>2018-11-14T06:05:51.391Z</updated>
+    <updated>2018-12-03T14:13:50.232Z</updated>
     
-    <content type="html"><![CDATA[<p>Adobe旗下软件<br><a id="more"></a></p><blockquote><ul><li>Adobe PS:</li><li>Adobe PS:</li><li>Adobe PS:</li><li>Adobe PS:</li><li>Adobe PS:</li><li>Adobe PS:</li><li>Adobe PS:</li></ul></blockquote>]]></content>
+    <content type="html"><![CDATA[<p>Adobe旗下软件<br>精彩内容马上上线<br><a id="more"></a></p><blockquote><ul><li>Adobe PS:<img src="http://piurh3b8q.bkt.clouddn.com/%E5%85%AC%E4%BC%97%E5%8F%B72.jpg" alt="images"></li><li>Adobe PS:</li><li>Adobe PS:</li><li>Adobe PS:</li><li>Adobe PS:</li><li>Adobe PS:</li><li>Adobe PS:</li></ul></blockquote>]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;Adobe旗下软件&lt;br&gt;
+      &lt;p&gt;Adobe旗下软件&lt;br&gt;精彩内容马上上线&lt;br&gt;
     
     </summary>
     
@@ -68,19 +92,13 @@
     <link href="http://yoursite.com/2018/11/13/%E7%94%B5%E8%84%91%E6%9D%80%E6%AF%92%E8%BD%AF%E4%BB%B6/"/>
     <id>http://yoursite.com/2018/11/13/电脑杀毒软件/</id>
     <published>2018-11-13T04:56:00.000Z</published>
-    <updated>2018-11-14T06:05:46.257Z</updated>
+    <updated>2018-11-20T11:02:30.696Z</updated>
     
-    <content type="html"><![CDATA[<p>电脑杀毒软件</p><blockquote><ul><li>很多人电脑里面安装360、电脑管家、瑞星、百度、金山卫士，甚至有些人安装好几个，还说电脑卡！这些个杀毒软件彼此之间干架，占用大量的CPU，请问怎么会不卡？？我个人有360洁癖！只要是360公司的软件，我都不会使用！更别说在电脑安装360的软件了，在我看来，360简直就是流氓垃圾！我推荐火绒这个软件，个人版免费，不会乱篡改任何东西，甚至外来软件安装都会请求同意，真的是业界良心软件！</li><li>火绒：<a href="https://www.huorong.cn/" target="_blank" rel="noopener">https://www.huorong.cn/</a></li></ul></blockquote>]]></content>
+    <content type="html"><![CDATA[<p>电脑杀毒软件<br><a id="more"></a></p><blockquote><ul><li>很多人电脑里面安装360、电脑管家、瑞星、百度、金山卫士，甚至有些人安装好几个，还说电脑卡！这些个杀毒软件彼此之间干架，占用大量的CPU，请问怎么会不卡？？我个人有360洁癖！只要是360公司的软件，我都不会使用！更别说在电脑安装360的软件了，在我看来，360简直就是流氓垃圾！我推荐火绒这个软件，个人版免费，不会乱篡改任何东西，甚至外来软件安装都会请求同意，真的是业界良心软件！</li><li>火绒：<a href="https://www.huorong.cn/" target="_blank" rel="noopener">https://www.huorong.cn/</a></li></ul></blockquote>]]></content>
     
     <summary type="html">
     
-      
-      
-        &lt;p&gt;电脑杀毒软件&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;很多人电脑里面安装360、电脑管家、瑞星、百度、金山卫士，甚至有些人安装好几个，还说电脑卡！这些个杀毒软件彼此之间干架，占用大量的CPU，请问怎么会不卡？？我个人有360洁癖！只要是360公司的软件，我都不会
-      
+      &lt;p&gt;电脑杀毒软件&lt;br&gt;
     
     </summary>
     
@@ -88,22 +106,6 @@
     
     
       <category term="软件工具" scheme="http://yoursite.com/tags/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>博客模板以及MD语法</title>
-    <link href="http://yoursite.com/2018/05/22/first/"/>
-    <id>http://yoursite.com/2018/05/22/first/</id>
-    <published>2018-05-22T14:53:53.000Z</published>
-    <updated>2018-11-14T05:53:38.009Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-      <category term="texe" scheme="http://yoursite.com/categories/texe/"/>
-    
     
   </entry>
   
