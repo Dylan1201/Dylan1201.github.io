@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[个人博客--NEXT主题优化]]></title>
-    <url>%2F2018%2F12%2F14%2Fblog02%2F</url>
-    <content type="text"><![CDATA[精彩内容马上上线]]></content>
+    <title><![CDATA[域名申请之阿里云]]></title>
+    <url>%2F2018%2F12%2F26%2F%E5%9F%9F%E5%90%8D%E7%94%B3%E8%AF%B7%2F</url>
+    <content type="text"><![CDATA[今天给大家分享一下阿里云域名申请以及注册的超详细步骤！！都是个人经验。那说说为什么要申请域名呢？ 1、当初上大学刚刚接触前端在学习的时候，写了自己的第一个页面，很是开心，想跟朋友家人分享一下，然后，我就问老师，怎样才能在别人的手机或者电脑上看到我做的网页呢？然后老师来了一顿花里胡哨的骚操作，手机拿出来扫描二维码！咦！我做的网页在我的手机上看见了！于是乎，我就开始QQ微信分享！！2、有一个自己的域名方便啊，我们现在做的blog，就是用我自己的域名访问。3、搭配一个服务器或者是虚拟主机可以将自己做过的项目网页上传，随时随地查看，万一哪天忘了个啥，可以打开浏览器查看呐！！4、就当是装逼好了！！ 今天我们演示的是阿里云的域名申请。至于为什么选择阿里云呢，那就得文马云爸爸了！！因为他牛逼啊！！！好吧，其实是因为当初选择的时候也不知道为什么就选择了阿里云，可能是因为用支付宝方便！ 首先，咱们打开阿里云，免费注册一个账号，也可以用支付宝直接扫码登录，如图依次选择[左上角三杠]–&gt;[产品]–&gt;[精选]–&gt;[域名注册] 然后再这里面输入你想要的域名，比如：niubi 再点击搜索框后面的查域名]]></content>
       <categories>
-        <category>前端</category>
+        <category>tool</category>
       </categories>
       <tags>
-        <tag>blog</tag>
+        <tag>域名</tag>
       </tags>
   </entry>
   <entry>
     <title><![CDATA[个人博客--基于HEXO + Git + github搭建个人博客]]></title>
     <url>%2F2018%2F12%2F03%2Fblog01%2F</url>
-    <content type="text"><![CDATA[搭建个人博客不是很难，完全免费，若要逼格高一点的话，可以花一点小钱，买一个域名。 相信很多计算机专业的道友们都想有一个属于自己的博客吧（至少我在此之前很想），本文将带领大家搭建一个属于自己的博客！虽然网上有很多教程，但是我在自己做的时候就莫名其妙的跳过好多坑！!经过不懈的努力，终于大功告成！个人目前还是很满意的！ 申明：本教程仅仅针对windows用户！！ 目录安装软件Git安装Hexo安装NodeJs安装更该主题github注册账号注册创建仓库上传到仓库域名申请域名绑定Page服务正文Git安装 根据自己电脑系统下载安装[git][1]，安装就选择傻瓜式安装。如果想学习更多git，点击[Git教程][2]，本文仅用到不多的几条命令！ NodeJs安装 下载安装[NodeJs][3],推荐下载左面稳定版！这是[NodeJs简介][4]。 推荐下载安装到D盘，记住安装路径，一般情况下安装目录为D:\Program Files\nodejs\ 安装完成后按Win+R，输入cmd打开控制台输入一下代码检查安装是否正确完成：12node -vnpm -v 出现以下情况则表示正确安装Hexo安装 在任意一个地方新建一个文件夹，命名为“blog”作为我们的博客的本地文件，比如我是在E盘根目录下键的。 打开文件夹，鼠标右键选择“Git Bash Here”，打开git控制台，输入命令开始安装1npm install -g hexo-cli #安装hexo脚手架 出现下图内容，表示安装正确 1hexo init #Hexo自动在当前文件夹下下载搭建网站所需的所有文件 出现下图内容，表示安装正确 1npm install #安装依赖包 出现下图内容，表示安装正确 到此为止，如果一路顺利，那么恭喜你，你的个人博客已经生成！1hexo g #完整命令为hexo generate，生成静态文件 出现下图内容，表示安装正确 接下来就是本地预览你的博客！1hexo s #完整命令为hexo server，启动服务器，用来本地预览 此时，我们的博客是不怎么美光，接下来我们给它换个主题。在刚刚的git控制台里面输入代码以下代码，下载theme主题。在此之前，需要按住 “ctrl+c”停止服务器。1git clone https://github.com/iissnan/hexo-theme-next themes/next 打开E:\hexo，用你喜欢的编程软件打开 _config.yml 文件，ctrl+f 搜索 theme 关键字，修改为以下代码1theme: next github注册 现在我们的博客仅仅在本地运行，接下来我们就要将它上传的互联网，让小伙伴们观赏我们的博客！ 注册账号 如果你有github账号，可以直接跳过这一步。[github官网][5]。 在此处填写信息注册github账号。 创建仓库 1.点击 “new repository” 按钮创建一个新的仓库 2.你仓库的名字必须是你的github的名字+ .github.io 比如我的 github 名字是 Dylan1201，那么我的仓库名字就是 Dylan1201.github.io下面的public也要选中 由于我已经创建了一个该名字的仓库，所以不能创建第二个，所以ta给我提示红色框里面的东西。然后点击 “Creating repository” 按钮完成创建。 配置SSH 继续在git里面提交代码 ssh-keygen -t rsa -C &quot;你的邮件地址&quot;,引号里面的内容输入你的邮箱地址，然后回车，会提示你文件保存的路径，这时候按回车键确认，然后会提示你输入密码，输入即可（输入密码是看不到的），然后会确认输入一次，就可以在刚刚的路径看到生成了两个文件，一个是id_rsa，另一个是id_rsa.pub，用sublime打开id_rsa.pub然后选中里面的全部内容，复制下来。打开github，点击右上角小图标，选择 “settings” 按钮。 在左面菜单栏中选择 “SSH and GPG keys” 按钮，再点击 “new SSH key” 按钮，“title” 随意填写，将刚刚赋值的代码粘贴到“key”中，然后点击 “add SSH key” 按钮完成公钥添加。 上传到仓库 打开E:\hexo，用你喜欢的编程软件打开_config.yml文件，文件最后可以看到 12deploy: type: 修改为一下内容，主意，将连接修改为你的连接1234deploy: type: git repository: git@github.com:yourname/yourname.github.io.git #发布到github branch: master 在E:/blog 根目录下右键打开“Gti Bash here”，输入以下命令1hexo d &amp;&amp; hexo g 如果出现以下提示1ERROR Deployer not found: git 输入以下命令,然后再输入上面的命令 1npm install hexo-deployer-git --save 这时候如果弹出一个对话框，输入在github上面的用户名和密码即可。现在我们就可以在浏览器中输入网址：https://yourname.github.io 来查看自己的博客了。 域名申请，请看我的另一篇文章，此处火箭直达！(这也是搭建个人博客唯一需要花钱的地方)域名绑定Page服务 解析一个你喜欢的域名，比如www.123abc.或者blog.123abc.com,然后打开github你刚刚创建的仓库，点击上面的 “settings” 按钮在下面找到“GitHub Pages”，在这个地方添加你解析的域名保存即可。现在你就可以访问域名来访问你的博客了！！ [1]: https://git-scm.com/ [2]: https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000 [3]: https://nodejs.org/en/ [4]: https://www.cnblogs.com/fang-beny/p/4778591.html [5]: https://github.com/]]></content>
+    <content type="text"><![CDATA[搭建个人博客不是很难，完全免费，若要逼格高一点的话，可以花一点小钱，买一个域名。 相信很多计算机专业的道友们都想有一个属于自己的博客吧（至少我在此之前很想），本文将带领大家搭建一个属于自己的博客！虽然网上有很多教程，但是我在自己做的时候就莫名其妙的跳过好多坑！!经过不懈的努力，终于大功告成！个人目前还是很满意的！ 申明：本教程仅仅针对windows用户！！ 目录安装软件Git安装Hexo安装NodeJs安装更该主题github注册账号注册创建仓库上传到仓库域名申请域名绑定Page服务正文Git安装 根据自己电脑系统下载安装git，安装就选择傻瓜式安装。如果想学习更多git，点击Git教程，本文仅用到不多的几条命令！ NodeJs安装 下载安装NodeJs,推荐下载左面稳定版！这是NodeJs简介。 推荐下载安装到D盘，记住安装路径，一般情况下安装目录为D:\Program Files\nodejs\ 安装完成后按Win+R，输入cmd打开控制台输入一下代码检查安装是否正确完成：12node -vnpm -v 出现以下情况则表示正确安装 Hexo安装 在任意一个地方新建一个文件夹，命名为“blog”作为我们的博客的本地文件，比如我是在E盘根目录下键的。 打开文件夹，鼠标右键选择“Git Bash Here”，打开git控制台，输入命令开始安装1npm install -g hexo-cli #安装hexo脚手架 出现下图内容，表示安装正确 1hexo init #Hexo自动在当前文件夹下下载搭建网站所需的所有文件 出现下图内容，表示安装正确 1npm install #安装依赖包 出现下图内容，表示安装正确 到此为止，如果一路顺利，那么恭喜你，你的个人博客已经生成！1hexo g #完整命令为hexo generate，生成静态文件 出现下图内容，表示安装正确 接下来就是本地预览你的博客！1hexo s #完整命令为hexo server，启动服务器，用来本地预览 此时，我们的博客是不怎么美光，接下来我们给它换个主题。在刚刚的git控制台里面输入代码以下代码，下载theme主题。在此之前，需要按住 “ctrl+c”停止服务器。1git clone https://github.com/iissnan/hexo-theme-next themes/next 打开E:\hexo，用你喜欢的编程软件打开 _config.yml 文件，ctrl+f 搜索 theme 关键字，修改为以下代码1theme: next github注册 现在我们的博客仅仅在本地运行，接下来我们就要将它上传的互联网，让小伙伴们观赏我们的博客！ 注册账号 如果你有github账号，可以直接跳过这一步。github官网。 在此处填写信息注册github账号。 创建仓库 1.点击 “new repository” 按钮创建一个新的仓库 2.你仓库的名字必须是你的github的名字+ .github.io 比如我的 github 名字是 Dylan1201，那么我的仓库名字就是 Dylan1201.github.io下面的public也要选中 由于我已经创建了一个该名字的仓库，所以不能创建第二个，所以ta给我提示红色框里面的东西。然后点击 “Creating repository” 按钮完成创建。 配置SSH 继续在git里面提交代码 ssh-keygen -t rsa -C &quot;你的邮件地址&quot;,引号里面的内容输入你的邮箱地址，然后回车，会提示你文件保存的路径，这时候按回车键确认，然后会提示你输入密码，输入即可（输入密码是看不到的），然后会确认输入一次，就可以在刚刚的路径看到生成了两个文件，一个是id_rsa，另一个是id_rsa.pub，用sublime打开id_rsa.pub然后选中里面的全部内容，复制下来。打开github，点击右上角小图标，选择 “settings” 按钮。 在左面菜单栏中选择 “SSH and GPG keys” 按钮，再点击 “new SSH key” 按钮，“title” 随意填写，将刚刚赋值的代码粘贴到“key”中，然后点击 “add SSH key” 按钮完成公钥添加。 上传到仓库 打开E:\hexo，用你喜欢的编程软件打开_config.yml文件，文件最后可以看到 12deploy: type: 修改为一下内容，主意，将连接修改为你的连接1234deploy: type: git repository: git@github.com:yourname/yourname.github.io.git #发布到github branch: master 在E:/blog 根目录下右键打开“Gti Bash here”，输入以下命令1hexo d &amp;&amp; hexo g 如果出现以下提示1ERROR Deployer not found: git 输入以下命令,然后再输入上面的命令 1npm install hexo-deployer-git --save 这时候如果弹出一个对话框，输入在github上面的用户名和密码即可。现在我们就可以在浏览器中输入网址：https://yourname.github.io 来查看自己的博客了。 域名申请，请看我的另一篇文章，此处火箭直达！(这也是搭建个人博客唯一需要花钱的地方)域名绑定Page服务 解析一个你喜欢的域名，比如www.123abc.或者blog.123abc.com,然后打开github你刚刚创建的仓库，点击上面的 “settings” 按钮在下面找到“GitHub Pages”，在这个地方添加你解析的域名保存即可。现在你就可以访问域名来访问你的博客了！！]]></content>
       <categories>
         <category>前端</category>
       </categories>
@@ -25,7 +25,7 @@
   <entry>
     <title><![CDATA[Adobe软件]]></title>
     <url>%2F2018%2F11%2F14%2FAdobe%E8%BD%AF%E4%BB%B6%2F</url>
-    <content type="text"><![CDATA[Adobe旗下软件精彩内容马上上线 Adobe PS: Adobe PS: Adobe PS: Adobe PS: Adobe PS: Adobe PS: Adobe PS:]]></content>
+    <content type="text"><![CDATA[Adobe旗下软件 Adobe PS: Adobe AE: Adobe PR: Adobe AU: Adobe PS: Adobe PS: Adobe PS:]]></content>
       <categories>
         <category>tool</category>
       </categories>
