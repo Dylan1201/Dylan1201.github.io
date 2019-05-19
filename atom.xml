@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-05-19T14:40:50.700Z</updated>
+  <updated>2019-05-19T14:55:32.301Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,15 +21,15 @@
     <link href="http://yoursite.com/2019/05/19/new-1/"/>
     <id>http://yoursite.com/2019/05/19/new-1/</id>
     <published>2019-05-19T14:40:08.000Z</published>
-    <updated>2019-05-19T14:40:50.700Z</updated>
+    <updated>2019-05-19T14:55:32.301Z</updated>
     
-    <content type="html"><![CDATA[<p>这是新页面</p>]]></content>
+    <content type="html"><![CDATA[<p>这是新页面<br>再次更新</p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;这是新页面&lt;/p&gt;
+        &lt;p&gt;这是新页面&lt;br&gt;再次更新&lt;/p&gt;
 
       
     
