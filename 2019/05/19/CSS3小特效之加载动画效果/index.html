@@ -113,10 +113,12 @@
 <meta property="og:site_name" content="Dylan&#39;s Blog">
 <meta property="og:description" content="凡看书不为书所愚始善  加载动画效果 很多情况下，我们需要一个加载动画作为调用数据时的小特效，用来美化我们的页面！今天，就学习练习写一个这样的好看的加载动画！">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-07-22T13:41:33.531Z">
+<meta property="og:image" content="http://blogimage.puchao.cc/123.gif">
+<meta property="og:updated_time" content="2019-07-25T14:31:28.427Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSS3小特效之加载动画效果">
 <meta name="twitter:description" content="凡看书不为书所愚始善  加载动画效果 很多情况下，我们需要一个加载动画作为调用数据时的小特效，用来美化我们的页面！今天，就学习练习写一个这样的好看的加载动画！">
+<meta name="twitter:image" content="http://blogimage.puchao.cc/123.gif">
 
 
 
@@ -433,7 +435,7 @@
              <i class="fa fa-calendar-o"></i>
            </span>
            <span class="post-meta-item-text">字数统计:</span>
-           <span class="post-count">407(字)</span>
+           <span class="post-count">411(字)</span>
 
          </span>
 
@@ -443,7 +445,7 @@
              <i class="fa fa-calendar-o"></i>
            </span>
            <span class="post-meta-item-text">阅读时长:</span>
-           <span class="post-count">1(分)</span>
+           <span class="post-count">2(分)</span>
 
          </span>
 
@@ -485,6 +487,8 @@
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>加载动画效果<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"index.css"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box"</span>&gt;</span></span><br><span class="line">    	<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"loading"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">span</span>&gt;</span>Loading...<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">       	<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p><strong><em>CSS代码如下</em></strong></p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line">*&#123;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.box</span>&#123;</span><br><span class="line">    <span class="comment">/*设置窗体颜色*/</span></span><br><span class="line">    <span class="attribute">background-color</span>: <span class="number">#2980b9</span>;</span><br><span class="line">    <span class="comment">/*设置body的高为全窗口*/</span></span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100vh</span>;</span><br><span class="line">    <span class="comment">/*弹性布局让元素居中显示*/</span></span><br><span class="line">    <span class="attribute">display</span>: flex;</span><br><span class="line">    <span class="attribute">align-items</span>: center;</span><br><span class="line">    <span class="attribute">justify-content</span>: center;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.loading</span>&#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">box-sizing</span>: border-box;</span><br><span class="line">    <span class="comment">/*将正方形div变为一个圆环，宽为10px，只显示顶部*/</span></span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">50%</span>;</span><br><span class="line">    <span class="attribute">border-top</span>: <span class="number">10px</span> solid <span class="number">#f1c40f</span>;</span><br><span class="line">    <span class="attribute">position</span>: relative;</span><br><span class="line">    <span class="comment">/*给圆环添加一个旋转动画*/</span></span><br><span class="line">    <span class="attribute">animation</span>: rotate1 <span class="number">2s</span> linear infinite;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*利用::before和::after添加灵位两个边框，形成一整个封闭的圆环*/</span></span><br><span class="line"><span class="selector-class">.loading</span><span class="selector-pseudo">::before</span>,<span class="selector-class">.loading</span><span class="selector-pseudo">::after</span>&#123;</span><br><span class="line">    <span class="attribute">content</span>: <span class="string">''</span>;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">top</span>: -<span class="number">10px</span>;</span><br><span class="line">    <span class="attribute">box-sizing</span>: border-box;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">50%</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.loading</span><span class="selector-pseudo">::before</span>&#123;</span><br><span class="line">    <span class="attribute">border-top</span>: <span class="number">10px</span> solid <span class="number">#9b59b6</span>;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">rotate</span>(120deg);</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.loading</span><span class="selector-pseudo">::after</span>&#123;</span><br><span class="line">    <span class="attribute">border-top</span>: <span class="number">10px</span> solid <span class="number">#2ecc71</span>;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">rotate</span>(240deg);</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.loading</span> <span class="selector-tag">span</span>&#123;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#fff</span>;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">24px</span>;</span><br><span class="line">    <span class="attribute">text-align</span>: center;</span><br><span class="line">    <span class="attribute">line-height</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">animation</span>: rotate2 <span class="number">2s</span> linear infinite;</span><br><span class="line">&#125;</span><br><span class="line">@<span class="keyword">keyframes</span> rotate1 &#123;</span><br><span class="line">    <span class="selector-tag">to</span>&#123;</span><br><span class="line">        <span class="attribute">transform</span>: <span class="built_in">rotate</span>(360deg);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*给span添加一个反向旋转的动画，正好让内容'Loading...'看起来不旋转，但是能跳动*/</span></span><br><span class="line">@<span class="keyword">keyframes</span> rotate2 &#123;</span><br><span class="line">    <span class="selector-tag">to</span>&#123;</span><br><span class="line">        <span class="attribute">transform</span>: <span class="built_in">rotate</span>(-360deg);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong><em>效果如下</em></strong></p>
+<p><img src="http://blogimage.puchao.cc/123.gif" alt="images"></p>
 
       
     </div>
@@ -504,7 +508,7 @@
   <p><span>本文标题:</span><a href="/2019/05/19/CSS3小特效之加载动画效果/">CSS3小特效之加载动画效果</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 Dylan 的个人博客">Dylan</a></p>
   <p><span>发布时间:</span>2019年05月19日 - 22:05</p>
-  <p><span>最后更新:</span>2019年07月22日 - 21:07</p>
+  <p><span>最后更新:</span>2019年07月25日 - 22:07</p>
   <p>
     <span>原始链接:</span><a href="/2019/05/19/CSS3小特效之加载动画效果/" title="CSS3小特效之加载动画效果">https://blog.puchao.cc/2019/05/19/CSS3小特效之加载动画效果/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://blog.puchao.cc/2019/05/19/CSS3小特效之加载动画效果/" aria-label="复制成功！"></i></span>
@@ -569,8 +573,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/05/19/webstorm激活以及汉化/" rel="next" title="webstorm激活以及汉化">
-                <i class="fa fa-chevron-left"></i> webstorm激活以及汉化
+              <a href="/2019/05/19/webstorm激活以及汉化/" rel="next" title="CSS3小特效之动态滑动登录框">
+                <i class="fa fa-chevron-left"></i> CSS3小特效之动态滑动登录框
               </a>
             
           </div>
@@ -660,7 +664,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
