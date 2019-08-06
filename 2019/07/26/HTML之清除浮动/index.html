@@ -113,7 +113,7 @@
 <meta property="og:site_name" content="Dylan&#39;s Blog">
 <meta property="og:description" content="愿你成为自己喜欢的样子，不抱怨，不将就，有野心，有光芒！     在网页制作中，我们经常会用到浮动来布局，但是在之用浮动之后，会有一些新的问题出现，此时，我们就需要清除浮动。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-08-06T10:19:29.274Z">
+<meta property="og:updated_time" content="2019-08-06T13:41:18.190Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HTML之清除浮动">
 <meta name="twitter:description" content="愿你成为自己喜欢的样子，不抱怨，不将就，有野心，有光芒！     在网页制作中，我们经常会用到浮动来布局，但是在之用浮动之后，会有一些新的问题出现，此时，我们就需要清除浮动。">
@@ -481,6 +481,7 @@
 <p>更多情况下，我们使用第三种方式，它跟第二种方式的区别就是：它只添加一个伪元素，没有改变源码。</p>
 </blockquote>
 <h3 id="css代码-1"><a href="#css代码-1" class="headerlink" title="css代码"></a>css代码</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">*&#123;</span><br><span class="line">     <span class="attribute">margin</span>: <span class="number">0</span>;</span><br><span class="line">     <span class="attribute">padding</span>: <span class="number">0</span>;</span><br><span class="line"> &#125;</span><br><span class="line"><span class="selector-class">.b1</span>&#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">background</span>: <span class="number">#e67e22</span>;</span><br><span class="line">    <span class="attribute">float</span>: left;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.b2</span>&#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">background</span>: <span class="number">#44bd32</span>;</span><br><span class="line">    <span class="attribute">float</span>: right;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.box</span>&#123;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">2px</span> solid blue;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* 清除浮动 */</span></span><br><span class="line"><span class="selector-class">.box</span><span class="selector-pseudo">::after</span>&#123;</span><br><span class="line">    <span class="attribute">content</span>: <span class="string">''</span>;</span><br><span class="line">    <span class="comment">/* 因为添加的伪类是一个行内元素，要将其转换成块元素 */</span></span><br><span class="line">    <span class="attribute">display</span>: block;</span><br><span class="line">    <span class="attribute">clear</span>: both;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>## </p>
 
       
     </div>
@@ -500,7 +501,7 @@
   <p><span>本文标题:</span><a href="/2019/07/26/HTML之清除浮动/">HTML之清除浮动</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 Dylan 的个人博客">Dylan</a></p>
   <p><span>发布时间:</span>2019年07月26日 - 18:07</p>
-  <p><span>最后更新:</span>2019年08月06日 - 18:08</p>
+  <p><span>最后更新:</span>2019年08月06日 - 21:08</p>
   <p>
     <span>原始链接:</span><a href="/2019/07/26/HTML之清除浮动/" title="HTML之清除浮动">https://blog.puchao.cc/2019/07/26/HTML之清除浮动/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://blog.puchao.cc/2019/07/26/HTML之清除浮动/" aria-label="复制成功！"></i></span>
