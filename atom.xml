@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.puchao.cc/"/>
-  <updated>2019-08-14T07:23:44.729Z</updated>
+  <updated>2019-08-14T07:58:11.573Z</updated>
   <id>https://blog.puchao.cc/</id>
   
   <author>
@@ -15,6 +15,24 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>HTML5和CSS3的新特性（二）</title>
+    <link href="https://blog.puchao.cc/2019/08/14/HTML5%E5%92%8CCSS3%E7%9A%84%E6%96%B0%E7%89%B9%E6%80%A7(%E4%BA%8C)/"/>
+    <id>https://blog.puchao.cc/2019/08/14/HTML5和CSS3的新特性(二)/</id>
+    <published>2019-08-14T07:57:19.000Z</published>
+    <updated>2019-08-14T07:58:11.573Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="css3" scheme="https://blog.puchao.cc/categories/css3/"/>
+    
+    
+      <category term="css3" scheme="https://blog.puchao.cc/tags/css3/"/>
+    
+  </entry>
   
   <entry>
     <title>HTML5和CSS3的新特性(一)</title>
