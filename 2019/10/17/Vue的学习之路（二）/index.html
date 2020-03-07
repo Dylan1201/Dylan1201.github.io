@@ -1,0 +1,1343 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+<style>
+    .pace .pace-progress {
+        background: #1E92FB; /*进度条颜色*/
+        height: 3px;
+    }
+    .pace .pace-progress-inner {
+         box-shadow: 0 0 10px #1E92FB, 0 0 5px     #1E92FB; /*阴影颜色*/
+    }
+    .pace .pace-activity {
+        border-top-color: #1E92FB;    /*上边框颜色*/
+        border-left-color: #1E92FB;    /*左边框颜色*/
+    }
+</style>
+<meta name="theme-color" content="#222">
+
+
+
+  <script>
+    (function(){
+        if(''){
+            if (prompt('请输入文章密码') !== ''){
+                alert('密码错误！');
+                history.back();
+            }
+        }
+    })();
+</script>
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Vue,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Dylan's Blog" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="只有不断找寻机会的人才会及时把握机会，越努力，越幸运。我的Vue 学习之路（二）一、过滤器 filter 的学习 注意：vue的过滤器有两种，一种是全局的，一种是私有的（局部的），全局的写法是：filter:{} 而局部的写法是：filters:{}   1. 用法一：在双括号李插值1&amp;#123;&amp;#123; &amp;apos;ok&amp;apos; | globalFilter &amp;#125;&amp;#125; 用">
+<meta name="keywords" content="Vue">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vue 的学习之路（二）">
+<meta property="og:url" content="https://blog.puchao.cc/2019/10/17/Vue的学习之路（二）/index.html">
+<meta property="og:site_name" content="Dylan&#39;s Blog">
+<meta property="og:description" content="只有不断找寻机会的人才会及时把握机会，越努力，越幸运。我的Vue 学习之路（二）一、过滤器 filter 的学习 注意：vue的过滤器有两种，一种是全局的，一种是私有的（局部的），全局的写法是：filter:{} 而局部的写法是：filters:{}   1. 用法一：在双括号李插值1&amp;#123;&amp;#123; &amp;apos;ok&amp;apos; | globalFilter &amp;#125;&amp;#125; 用">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="c:/Users/Dylan/Desktop/Vue%20生命周期函数.png">
+<meta property="og:updated_time" content="2020-03-07T03:45:53.349Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Vue 的学习之路（二）">
+<meta name="twitter:description" content="只有不断找寻机会的人才会及时把握机会，越努力，越幸运。我的Vue 学习之路（二）一、过滤器 filter 的学习 注意：vue的过滤器有两种，一种是全局的，一种是私有的（局部的），全局的写法是：filter:{} 而局部的写法是：filters:{}   1. 用法一：在双括号李插值1&amp;#123;&amp;#123; &amp;apos;ok&amp;apos; | globalFilter &amp;#125;&amp;#125; 用">
+<meta name="twitter:image" content="c:/Users/Dylan/Desktop/Vue%20生命周期函数.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"right","display":"always","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://blog.puchao.cc/2019/10/17/Vue的学习之路（二）/">
+
+
+
+
+
+  <title>Vue 的学习之路（二） | Dylan's Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+
+<a href="https://github.com/Dylan1201" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Dylan's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">记录、分享、交流</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br>
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://blog.puchao.cc/2019/10/17/Vue的学习之路（二）/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Dylan">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Dylan's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Vue 的学习之路（二）</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-17T11:42:33+08:00">
+                2019-10-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/Vue/" itemprop="url" rel="index">
+                    <span itemprop="name">Vue</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+
+
+
+         <span class="post-time">
+       &nbsp; | &nbsp;
+           <span class="post-meta-item-icon">
+             <i class="fa fa-calendar-o"></i>
+           </span>
+           <span class="post-meta-item-text">字数统计:</span>
+           <span class="post-count">2.3k(字)</span>
+
+         </span>
+
+      <span class="post-time">
+       &nbsp; | &nbsp;
+           <span class="post-meta-item-icon">
+             <i class="fa fa-calendar-o"></i>
+           </span>
+           <span class="post-meta-item-text">阅读时长:</span>
+           <span class="post-count">11(分)</span>
+
+         </span>
+
+
+
+
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv">本文总阅读量 <i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="只有不断找寻机会的人才会及时把握机会，越努力，越幸运。"><a href="#只有不断找寻机会的人才会及时把握机会，越努力，越幸运。" class="headerlink" title="只有不断找寻机会的人才会及时把握机会，越努力，越幸运。"></a><blockquote class="blockquote-center">只有不断找寻机会的人才会及时把握机会，越努力，越幸运。</blockquote></h2><h1 id="我的Vue-学习之路（二）"><a href="#我的Vue-学习之路（二）" class="headerlink" title="我的Vue 学习之路（二）"></a>我的Vue 学习之路（二）</h1><h2 id="一、过滤器-filter-的学习"><a href="#一、过滤器-filter-的学习" class="headerlink" title="一、过滤器 filter 的学习"></a>一、过滤器 <em>filter</em> 的学习</h2><ul>
+<li><p>注意：vue的过滤器有两种，一种是全局的，一种是私有的（局部的），全局的写法是：filter:{}</p>
+<p>而局部的写法是：filters:{}</p>
+</li>
+</ul>
+<h3 id="1-用法一：在双括号李插值"><a href="#1-用法一：在双括号李插值" class="headerlink" title="1. 用法一：在双括号李插值"></a>1. 用法一：在双括号李插值</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123; &apos;ok&apos; | globalFilter &#125;&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="用法二：在v-bind表达式中使用"><a href="#用法二：在v-bind表达式中使用" class="headerlink" title="用法二：在v-bind表达式中使用"></a>用法二：在v-bind表达式中使用</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div v-bind:data=&quot;&apos;ok&apos; | globalFilter&quot; &gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="2-过滤器的参数一"><a href="#2-过滤器的参数一" class="headerlink" title="2.过滤器的参数一"></a>2.过滤器的参数一</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123; message | filterA | filterB &#125;&#125;</span><br></pre></td></tr></table></figure>
+<p>上面代码中，message是作为参数传给filterA的函数，而filterA函数的返回值作为参数传给filterB函数，最终显示的结果是由filterB返回的，例如:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;h1&gt;&#123;&#123;&apos;2019&apos; | filterA | filterB&#125;&#125;&lt;/h1&gt;</span><br><span class="line">filters:&#123;</span><br><span class="line">	filterA:function(val)&#123;</span><br><span class="line">		return val + &apos;年&apos;</span><br><span class="line">	&#125;,</span><br><span class="line">	filterB:function(val)&#123;</span><br><span class="line">		return val + &apos;大家好！&apos;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">// 最终输出的结果就是</span><br><span class="line">	2019年大家好！</span><br></pre></td></tr></table></figure>
+<h3 id="过滤器的参数2"><a href="#过滤器的参数2" class="headerlink" title="过滤器的参数2"></a>过滤器的参数2</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123; message | filterA(&apos;arg1&apos;, arg2) &#125;&#125;</span><br></pre></td></tr></table></figure>
+<p>上面代码中，filterA的第一个参数是message，依次是’arg1’,arg2</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;h2&gt;&#123;&#123; &apos;2019&apos; | filterA(&apos;10&apos;,&apos;19&apos;) &#125;&#125;&lt;/h2&gt;</span><br><span class="line">filters:&#123;</span><br><span class="line">	filterA:function(val,arg1,arg2)&#123;</span><br><span class="line">		return val + &apos;-&apos; + arg1 + &apos;-&apos; + arg2</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">// 最终输出的结果是</span><br><span class="line">	2019-10-19</span><br></pre></td></tr></table></figure>
+<h3 id="过滤器的参数3"><a href="#过滤器的参数3" class="headerlink" title="过滤器的参数3"></a>过滤器的参数3</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123; &apos;a&apos;,&apos;b&apos; | filterB &#125;&#125;</span><br></pre></td></tr></table></figure>
+<p>上线代码表示’a’和’b’分别作为参数传给filterA</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;h3&gt;&#123;&#123; &apos;Hello&apos;,&apos;World&apos; | filterA &#125;&#125;&lt;/h3&gt;</span><br><span class="line">filters:&#123;</span><br><span class="line">	filterA:function(val,val2)&#123;</span><br><span class="line">		return val + &apos;  &apos; + val2</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">// 最终输出的结果是</span><br><span class="line">Hello World</span><br></pre></td></tr></table></figure>
+<h2 id="二、Vue-的按键修饰符"><a href="#二、Vue-的按键修饰符" class="headerlink" title="二、Vue 的按键修饰符"></a>二、Vue 的按键修饰符</h2><p>vue 为我们提供了几个特殊的按键监控包括Tab, Enter, Delete, Esc, Space, Up, Down, Left, Right</p>
+<p>使用场景是，例如一些网站注册或者登陆，可以按回车键代替按钮的功能，就可以这么写：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;button @keyup.enter=&quot;login()&quot; @click=&quot;login()&quot;&gt;登陆&lt;/button&gt;</span><br></pre></td></tr></table></figure>
+<p>上面的按钮就是在使用鼠标点击和按回车键都会跳转登陆</p>
+<h2 id="三、生命周期函数"><a href="#三、生命周期函数" class="headerlink" title="三、生命周期函数"></a>三、生命周期函数</h2><p><img src="C:\Users\Dylan\Desktop\Vue 生命周期函数.png" alt="Vue 生命周期函数"></p>
+<h2 id="四、基于resource的Ajax数据请求"><a href="#四、基于resource的Ajax数据请求" class="headerlink" title="四、基于resource的Ajax数据请求"></a>四、基于resource的Ajax数据请求</h2><h3 id="1-get请求"><a href="#1-get请求" class="headerlink" title="1 get请求"></a>1 get请求</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.$http.get(<span class="string">'url'</span>).then(<span class="function"><span class="params">result</span>=&gt;</span>&#123;</span><br><span class="line">		<span class="comment">//请求之后的数据处理</span></span><br><span class="line">	&#125;)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//其中参数 url 是请求的地址</span></span><br></pre></td></tr></table></figure>
+<h3 id="2-post-请求"><a href="#2-post-请求" class="headerlink" title="2 post 请求"></a>2 post 请求</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.$http.post(<span class="string">'url'</span>,&#123;sendData&#125;,&#123;<span class="attr">emulateJSON</span>:<span class="literal">true</span>&#125;).then(<span class="function"><span class="params">result</span>=&gt;</span>&#123;</span><br><span class="line">		<span class="comment">//请求之后的数据处理</span></span><br><span class="line">	&#125;)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 其中参数 url 是请求的地址，sendData 是发送的数据，emulateJSON：true 固定写法</span></span><br></pre></td></tr></table></figure>
+<h2 id="五、axios-的接口调用"><a href="#五、axios-的接口调用" class="headerlink" title="五、axios 的接口调用"></a>五、axios 的接口调用</h2><h3 id="1-axios-的基本用法"><a href="#1-axios-的基本用法" class="headerlink" title="1 axios 的基本用法"></a>1 axios 的基本用法</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">axios.get(<span class="string">'url'</span>).then(<span class="function"><span class="params">res</span>=&gt;</span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(res.data)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h3 id="2-axios-的常用API"><a href="#2-axios-的常用API" class="headerlink" title="2 axios 的常用API"></a>2 axios 的常用API</h3><h4 id="1-get-查询数据"><a href="#1-get-查询数据" class="headerlink" title="1 get 查询数据"></a>1 get 查询数据</h4><ul>
+<li><p>1.1 get 通过 URL 传递参数</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">axios.get(<span class="string">'/data?id=123'</span>).then(<span class="function"><span class="params">res</span>=&gt;</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(res.data)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>1.2 get 通过 params 传递参数</p>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">axios.get(<span class="string">'/data'</span>,&#123;</span><br><span class="line">          params:&#123;</span><br><span class="line">          	id:<span class="number">123</span></span><br><span class="line">          &#125;</span><br><span class="line">       &#125;).then(<span class="function"><span class="params">res</span>=&gt;</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(res.data)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h4 id="2-post-添加数据"><a href="#2-post-添加数据" class="headerlink" title="2 post 添加数据"></a>2 post 添加数据</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">axios.post(<span class="string">'/data'</span>,&#123;</span><br><span class="line">    username: <span class="string">"user"</span>,</span><br><span class="line">    password: <span class="number">123456</span></span><br><span class="line">&#125;).then(<span class="function"><span class="params">res</span>=&gt;</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(res.data)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h4 id="3-put-修改数据-用法以及传参同-post"><a href="#3-put-修改数据-用法以及传参同-post" class="headerlink" title="3 put 修改数据 (用法以及传参同 post )"></a>3 put 修改数据 (用法以及传参同 post )</h4><h4 id="4-delete-删除数据-用法以及传参同-get"><a href="#4-delete-删除数据-用法以及传参同-get" class="headerlink" title="4 delete 删除数据(用法以及传参同 get )"></a>4 delete 删除数据(用法以及传参同 get )</h4><h3 id="3-async-await-的基本用法"><a href="#3-async-await-的基本用法" class="headerlink" title="3 async/await 的基本用法"></a>3 async/await 的基本用法</h3><ul>
+<li>async/await 是ES7 引入的新语法，可以更加方便的进行异步操作</li>
+<li>async 关键字用于函数上（async 函数的返回值是promise实例对象）</li>
+<li>await 关键字用于 async 函数单中（await 可以得到异步的结果）<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">queryData</span>(<span class="params">id</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">const</span> res = <span class="keyword">await</span> axios.get(<span class="string">'/data'</span>);</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line">queryData.then(<span class="function"><span class="params">res</span>=&gt;</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(res)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="六、Vue-动画"><a href="#六、Vue-动画" class="headerlink" title="六、Vue  动画"></a>六、Vue  动画</h2><h3 id="1-使用原生方法"><a href="#1-使用原生方法" class="headerlink" title="1 使用原生方法"></a>1 使用原生方法</h3><ul>
+<li>注意：1、使用transition 元素，把需要被动化控制的元素包裹起来    transition 是Vue 官方提</li>
+<li>2、自定义两组样式，来控制transition 内部的元素实现动画 </li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css">    <span class="comment">/* v-enter 【这是一个时间点】是进入之前元素的始状态，此时没有进入*/</span></span></span><br><span class="line"><span class="css">    <span class="comment">/* v-leave-to 【这也是一个时间点】是动画离开之后，离开的终止状态，此时元素动画结束 */</span></span></span><br><span class="line"><span class="css">    <span class="selector-class">.v-enter</span>&#123;</span></span><br><span class="line"><span class="undefined">        opacity: 0;</span></span><br><span class="line"><span class="undefined">        margin-left: 1800px;</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="css">    <span class="selector-class">.v-leave-to</span> &#123;</span></span><br><span class="line"><span class="undefined">        opacity: 0;</span></span><br><span class="line"><span class="undefined">        margin-top: 200px;</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined">    /* v-enter-active 【入场动画的时间段】</span></span><br><span class="line"><span class="undefined">    v-leave-active 【出场动画的时间段】 */</span></span><br><span class="line"><span class="css">    <span class="selector-class">.v-enter-active</span>,</span></span><br><span class="line"><span class="css">    <span class="selector-class">.v-leave-active</span> &#123;</span></span><br><span class="line"><span class="undefined">        transition: all 1s ease;</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="css">    <span class="comment">/* 不使用v-前缀，自定义前缀 */</span></span></span><br><span class="line"><span class="css">    <span class="selector-class">.my-enter</span>&#123;</span></span><br><span class="line"><span class="undefined">        opacity: 0;</span></span><br><span class="line"><span class="undefined">        margin-bottom: 100px;</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="css">    <span class="selector-class">.my-leave-to</span> &#123;</span></span><br><span class="line"><span class="undefined">        opacity: 0;</span></span><br><span class="line"><span class="undefined">        margin-top: 200px;</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="css">    <span class="selector-class">.my-enter-active</span>,</span></span><br><span class="line"><span class="css">    <span class="selector-class">.my-leave-active</span> &#123;</span></span><br><span class="line"><span class="undefined">        transition: all 1s ease;</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 需求：点击按钮h3 显示，再点击h3消失 --&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 步骤：</span></span><br><span class="line"><span class="comment">		1、使用transition 元素，把需要被动化控制的元素包裹起来</span></span><br><span class="line"><span class="comment">			transition 是Vue 官方提供的</span></span><br><span class="line"><span class="comment">	2、自定义两组样式，来控制transition 内部的元素实现动画 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">value</span>=<span class="string">"toggle"</span> @<span class="attr">click</span>=<span class="string">"flag=!flag"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">transition</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">h3</span> <span class="attr">v-if</span>=<span class="string">"flag"</span>&gt;</span>这是一个H3<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">transition</span> &gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">hr</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 不使用v-前缀，自定义前缀--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">value</span>=<span class="string">"toggle2"</span> @<span class="attr">click</span>=<span class="string">"flag2=!flag2"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">transition</span>  <span class="attr">name</span>=<span class="string">"my"</span> <span class="attr">mode</span>=<span class="string">""</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">h2</span> <span class="attr">v-if</span>=<span class="string">"flag2"</span>&gt;</span>这是一个H2<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">transition</span> &gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> vue = <span class="keyword">new</span> Vue(&#123;</span></span><br><span class="line"><span class="javascript">        el: <span class="string">'#app'</span>,</span></span><br><span class="line"><span class="undefined">        data: &#123;</span></span><br><span class="line"><span class="javascript">            flag: <span class="literal">false</span>,</span></span><br><span class="line"><span class="javascript">            flag2: <span class="literal">false</span></span></span><br><span class="line"><span class="undefined">        &#125;,</span></span><br><span class="line"><span class="undefined">    &#125;);</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="2-使用animated-动画"><a href="#2-使用animated-动画" class="headerlink" title="2 使用animated 动画"></a>2 使用animated 动画</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 需要引入animated 库 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"lib/animate.min.css"</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">value</span>=<span class="string">"toggle"</span> @<span class="attr">click</span>=<span class="string">"flag = !flag"</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 使用 :duration 来同意设置入场跟出场是的动画时间 --&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 也可以使用 :druation&#123; enter:200, leave:300 &#125; 来分别设置入场跟出场的动画时间 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">transition</span> <span class="attr">enter-active-class</span>=<span class="string">"animated bounceIn"</span> <span class="attr">leave-active-class</span>=<span class="string">"animated flipInY"</span> <span class="attr">:duration</span>=<span class="string">400</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h3</span> <span class="attr">v-if</span>=<span class="string">"flag"</span>&gt;</span>这是一个H3<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">transition</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> vue = <span class="keyword">new</span> Vue(&#123;</span></span><br><span class="line"><span class="javascript">        el: <span class="string">'#app'</span>,</span></span><br><span class="line"><span class="undefined">        data: &#123;</span></span><br><span class="line"><span class="javascript">            flag: <span class="literal">false</span></span></span><br><span class="line"><span class="undefined">        &#125;,</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">    &#125;);</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="组件的创建和使用"><a href="#组件的创建和使用" class="headerlink" title="组件的创建和使用"></a>组件的创建和使用</h2><h3 id="1-第一种创建组件的方式"><a href="#1-第一种创建组件的方式" class="headerlink" title="1 第一种创建组件的方式"></a>1 第一种创建组件的方式</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">'en'</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1.0"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"X-UA-Compatible"</span> <span class="attr">content</span>=<span class="string">"ie=edge"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"lib/vue.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">my-com1</span>&gt;</span><span class="tag">&lt;/<span class="name">my-com1</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">        <span class="comment">// 第一种写法</span></span></span><br><span class="line"><span class="javascript">        <span class="comment">// 使用vue.extend 来创建vue组件</span></span></span><br><span class="line"><span class="javascript">        <span class="comment">// var com1 = Vue.extend(&#123;</span></span></span><br><span class="line"><span class="xml">        //     template:'<span class="tag">&lt;<span class="name">h3</span>&gt;</span>这是使用 Vue.extend 创建的组件<span class="tag">&lt;/<span class="name">h3</span>&gt;</span>' // 通过template属性 指定了组件要展示的HTML结构</span></span><br><span class="line"><span class="javascript">        <span class="comment">// &#125;)</span></span></span><br><span class="line"><span class="javascript">        <span class="comment">// Vue.component('myCom1', com1);</span></span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">        <span class="comment">// 第二种写法</span></span></span><br><span class="line"><span class="javascript">        Vue.component(<span class="string">'myCom1'</span>,Vue.extend(&#123;</span></span><br><span class="line"><span class="xml">            template:'<span class="tag">&lt;<span class="name">h3</span>&gt;</span>这是使用 Vue.extend 创建的组件<span class="tag">&lt;/<span class="name">h3</span>&gt;</span>'</span></span><br><span class="line"><span class="undefined">        &#125;))</span></span><br><span class="line"><span class="javascript">         <span class="keyword">var</span> vue = <span class="keyword">new</span> Vue(&#123;</span></span><br><span class="line"><span class="javascript">            el : <span class="string">'#app'</span>,</span></span><br><span class="line"><span class="undefined">            data : &#123;  &#125;,</span></span><br><span class="line"><span class="undefined">            methods : &#123;  &#125;    </span></span><br><span class="line"><span class="undefined">        &#125;);</span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="2-第二种创建组件的方式"><a href="#2-第二种创建组件的方式" class="headerlink" title="2 第二种创建组件的方式"></a>2 第二种创建组件的方式</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">'en'</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1.0"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"X-UA-Compatible"</span> <span class="attr">content</span>=<span class="string">"ie=edge"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"lib/vue.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">my-com2</span>&gt;</span><span class="tag">&lt;/<span class="name">my-com2</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">        <span class="comment">// 注意：不论是哪种方式创建出来的组件，组件的template 属性指向的模板内容，有且只有一个根元素</span></span></span><br><span class="line"><span class="javascript">        Vue.component(<span class="string">'myCom2'</span>,&#123;</span></span><br><span class="line"><span class="xml">            template:'<span class="tag">&lt;<span class="name">h3</span>&gt;</span>这是直接创建的组件<span class="tag">&lt;/<span class="name">h3</span>&gt;</span>'</span></span><br><span class="line"><span class="undefined">                </span></span><br><span class="line"><span class="undefined">        &#125;)</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">         <span class="keyword">var</span> vue = <span class="keyword">new</span> Vue(&#123;</span></span><br><span class="line"><span class="javascript">            el : <span class="string">'#app'</span>,</span></span><br><span class="line"><span class="undefined">            data : &#123;  &#125;,</span></span><br><span class="line"><span class="undefined">            methods : &#123;  &#125;    </span></span><br><span class="line"><span class="undefined">        &#125;);</span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="3-第三种创建组件的方式"><a href="#3-第三种创建组件的方式" class="headerlink" title="3 第三种创建组件的方式"></a>3 第三种创建组件的方式</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">'en'</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1.0"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"X-UA-Compatible"</span> <span class="attr">content</span>=<span class="string">"ie=edge"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"lib/vue.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">my-com3</span>&gt;</span><span class="tag">&lt;/<span class="name">my-com3</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 在被控制的APP外面使用template元素，定义组件的HTML模板结构 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">h1</span>&gt;</span>这是通过template 元素，在外部定义的组件结构，这个方式有代码的提示和高亮<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">h4</span>&gt;</span>好用不错<span class="tag">&lt;/<span class="name">h4</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">        Vue.component(<span class="string">'myCom3'</span>,&#123;</span></span><br><span class="line"><span class="javascript">            template:<span class="string">'#tml'</span></span></span><br><span class="line"><span class="undefined">        &#125;)</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">         <span class="keyword">var</span> vue = <span class="keyword">new</span> Vue(&#123;</span></span><br><span class="line"><span class="javascript">            el : <span class="string">'#app'</span>,</span></span><br><span class="line"><span class="undefined">            data : &#123;  &#125;,</span></span><br><span class="line"><span class="undefined">            methods : &#123;  &#125;    </span></span><br><span class="line"><span class="undefined">        &#125;);</span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="七、vuex"><a href="#七、vuex" class="headerlink" title="七、vuex"></a>七、vuex</h2><h3 id="1-vuex-介绍"><a href="#1-vuex-介绍" class="headerlink" title="1. vuex 介绍"></a>1. vuex 介绍</h3><h3 id="2-vuex-配置步骤及操作"><a href="#2-vuex-配置步骤及操作" class="headerlink" title="2. vuex  配置步骤及操作"></a>2. vuex  配置步骤及操作</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">// 1. 运行</span></span><br><span class="line">npm i vuex -S* </span><br><span class="line"><span class="comment">// 2. 导入包</span></span><br><span class="line"><span class="keyword">import</span> Vuex <span class="keyword">from</span> <span class="string">'vuex'</span></span><br><span class="line"><span class="comment">// 3. 注册 vuex 到 vue 中 </span></span><br><span class="line">Vue.use(Vuex)</span><br><span class="line"><span class="comment">// 4. 创建一个 Vuex 的实例 store ，得到一个数据仓储对象</span></span><br><span class="line"><span class="keyword">var</span> store = <span class="keyword">new</span> Vuex.store(&#123;</span><br><span class="line">    state: &#123;</span><br><span class="line">        <span class="comment">// 可以理解为 组件中的 data  专门用来存储数据</span></span><br><span class="line">        count: <span class="number">0</span></span><br><span class="line">    &#125;,</span><br><span class="line">    mutations: &#123;</span><br><span class="line">        <span class="comment">// 可以理解为 组件中的 methods</span></span><br><span class="line">        <span class="comment">// 如果要操作 state 中的值，只能通过 mutations 提供的方法，才能操作对应数据，不推荐直接操作 state 中的		// 数据，，因为万一导致数据紊乱，態快速定位到错误的原因，因为每个组件都可能操作</span></span><br><span class="line">        <span class="function"><span class="keyword">function</span> (<span class="params">state, pars</span>)</span>&#123; </span><br><span class="line">            <span class="comment">// 此处 第一个参数 state 固定,并且只能传两个参数，第二个参数可以是对象、数组...</span></span><br><span class="line">            <span class="comment">// 第二个参数 pars 是通过 commit 提交过来的</span></span><br><span class="line">            state.count++</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    getters: &#123;</span><br><span class="line">        <span class="comment">// 这里的 getters 只负责提供数据，不负责修改数据</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">// 5. 把 store 挂在到 vue 实例对象中</span></span><br><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">    el: <span class="string">'#app'</span>,</span><br><span class="line">    store,</span><br><span class="line">    components: &#123; App &#125;,</span><br><span class="line">    template: <span class="string">'&lt;App/&gt;'</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>注意：如果要调用 mutations 中的方法，只能使用 this.$store.commit(‘方法名’)。</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+<div>
+      
+        
+<div class="my_post_copyright">
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+  <!-- JS库 sweetalert 可修改路径 -->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://cdn.bootcss.com/sweetalert/1.1.3/sweetalert.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/sweetalert/1.1.3/sweetalert.min.css">
+  <p><span>本文标题:</span><a href="/2019/10/17/Vue的学习之路（二）/">Vue 的学习之路（二）</a></p>
+  <p><span>文章作者:</span><a href="/" title="访问 Dylan 的个人博客">Dylan</a></p>
+  <p><span>发布时间:</span>2019年10月17日 - 11:10</p>
+  <p><span>最后更新:</span>2020年03月07日 - 11:03</p>
+  <p>
+    <span>原始链接:</span><a href="/2019/10/17/Vue的学习之路（二）/" title="Vue 的学习之路（二）">https://blog.puchao.cc/2019/10/17/Vue的学习之路（二）/</a>
+    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://blog.puchao.cc/2019/10/17/Vue的学习之路（二）/" aria-label="复制成功！"></i></span>
+  </p>
+  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i><a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>
+</div>
+<script>
+    var clipboard = new Clipboard('.fa-clipboard');
+    clipboard.on('success', $(function(){
+      $(".fa-clipboard").click(function(){
+        swal({
+          title: "",
+          text: '复制成功',
+          html: false,
+          timer: 700,
+          showConfirmButton: false
+        });
+      });
+    }));
+</script>
+
+
+      
+</div>
+
+
+    
+
+    
+
+    
+
+<div>
+  
+    <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+
+  
+</div>
+
+
+
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Vue/" rel="tag"><i class="fa fa-tag"></i> Vue</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/08/14/HTML5和CSS3的新特性(二)/" rel="next" title="HTML5和CSS3的新特性（二）">
+                <i class="fa fa-chevron-left"></i> HTML5和CSS3的新特性（二）
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Dylan">
+            
+              <p class="site-author-name" itemprop="name">Dylan</p>
+              <p class="site-description motion-element" itemprop="description">Don't go through life, grow through life.</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/Dylan1201" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i></a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:dylan@puchao.cc" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i></a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://plus.google.com/dylanpu6" target="_blank" title="Google">
+                      
+                        <i class="fa fa-fw fa-google"></i></a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://twitter.com/Dylan87571834" target="_blank" title="Twitter">
+                      
+                        <i class="fa fa-fw fa-twitter"></i></a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://qq.com" target="_blank" title="QQ">
+                      
+                        <i class="fa fa-fw fa-qq"></i></a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="/ /" target="_blank" title="wechat">
+                      
+                        <i class="fa fa-fw fa-wechat"></i></a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#只有不断找寻机会的人才会及时把握机会，越努力，越幸运。"><span class="nav-number">1.</span> <span class="nav-text">只有不断找寻机会的人才会及时把握机会，越努力，越幸运。</span></a></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#我的Vue-学习之路（二）"><span class="nav-number"></span> <span class="nav-text">我的Vue 学习之路（二）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、过滤器-filter-的学习"><span class="nav-number">1.</span> <span class="nav-text">一、过滤器 filter 的学习</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-用法一：在双括号李插值"><span class="nav-number">1.1.</span> <span class="nav-text">1. 用法一：在双括号李插值</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#用法二：在v-bind表达式中使用"><span class="nav-number">1.1.1.</span> <span class="nav-text">用法二：在v-bind表达式中使用</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-过滤器的参数一"><span class="nav-number">1.2.</span> <span class="nav-text">2.过滤器的参数一</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#过滤器的参数2"><span class="nav-number">1.3.</span> <span class="nav-text">过滤器的参数2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#过滤器的参数3"><span class="nav-number">1.4.</span> <span class="nav-text">过滤器的参数3</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、Vue-的按键修饰符"><span class="nav-number">2.</span> <span class="nav-text">二、Vue 的按键修饰符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、生命周期函数"><span class="nav-number">3.</span> <span class="nav-text">三、生命周期函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四、基于resource的Ajax数据请求"><span class="nav-number">4.</span> <span class="nav-text">四、基于resource的Ajax数据请求</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-get请求"><span class="nav-number">4.1.</span> <span class="nav-text">1 get请求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-post-请求"><span class="nav-number">4.2.</span> <span class="nav-text">2 post 请求</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#五、axios-的接口调用"><span class="nav-number">5.</span> <span class="nav-text">五、axios 的接口调用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-axios-的基本用法"><span class="nav-number">5.1.</span> <span class="nav-text">1 axios 的基本用法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-axios-的常用API"><span class="nav-number">5.2.</span> <span class="nav-text">2 axios 的常用API</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-get-查询数据"><span class="nav-number">5.2.1.</span> <span class="nav-text">1 get 查询数据</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-post-添加数据"><span class="nav-number">5.2.2.</span> <span class="nav-text">2 post 添加数据</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-put-修改数据-用法以及传参同-post"><span class="nav-number">5.2.3.</span> <span class="nav-text">3 put 修改数据 (用法以及传参同 post )</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-delete-删除数据-用法以及传参同-get"><span class="nav-number">5.2.4.</span> <span class="nav-text">4 delete 删除数据(用法以及传参同 get )</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-async-await-的基本用法"><span class="nav-number">5.3.</span> <span class="nav-text">3 async/await 的基本用法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#六、Vue-动画"><span class="nav-number">6.</span> <span class="nav-text">六、Vue  动画</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-使用原生方法"><span class="nav-number">6.1.</span> <span class="nav-text">1 使用原生方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-使用animated-动画"><span class="nav-number">6.2.</span> <span class="nav-text">2 使用animated 动画</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#组件的创建和使用"><span class="nav-number">7.</span> <span class="nav-text">组件的创建和使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-第一种创建组件的方式"><span class="nav-number">7.1.</span> <span class="nav-text">1 第一种创建组件的方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-第二种创建组件的方式"><span class="nav-number">7.2.</span> <span class="nav-text">2 第二种创建组件的方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-第三种创建组件的方式"><span class="nav-number">7.3.</span> <span class="nav-text">3 第三种创建组件的方式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#七、vuex"><span class="nav-number">8.</span> <span class="nav-text">七、vuex</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-vuex-介绍"><span class="nav-number">8.1.</span> <span class="nav-text">1. vuex 介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-vuex-配置步骤及操作"><span class="nav-number">8.2.</span> <span class="nav-text">2. vuex  配置步骤及操作</span></a></li></ol></li></ol></li></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; 2018 &mdash; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-star"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Dylan</span>
+
+  
+</div>
+
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      本站访客数 <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      本站总访问量 <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+  
+  
+    <script id="ribbon" type="text/javascript" size="3000" alpha="0.1" zindex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  undefined
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>
