@@ -1,0 +1,1458 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+<style>
+    .pace .pace-progress {
+        background: #1E92FB; /*进度条颜色*/
+        height: 3px;
+    }
+    .pace .pace-progress-inner {
+         box-shadow: 0 0 10px #1E92FB, 0 0 5px     #1E92FB; /*阴影颜色*/
+    }
+    .pace .pace-activity {
+        border-top-color: #1E92FB;    /*上边框颜色*/
+        border-left-color: #1E92FB;    /*左边框颜色*/
+    }
+</style>
+<meta name="theme-color" content="#222">
+
+
+
+  <script>
+    (function(){
+        if(''){
+            if (prompt('请输入文章密码') !== ''){
+                alert('密码错误！');
+                history.back();
+            }
+        }
+    })();
+</script>
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Vue,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Dylan's Blog" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="一个人真正的智慧，是用积极的心态，专注于自己喜欢的事，别人怎么说，怎么看，都不重要，重要的是要活出自己。    自学前端以来，听到最多的就是框架，今天就开始学习最火的框架 –  Vue.js  Vue 简介">
+<meta name="keywords" content="Vue">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vue 的学习之路（一）">
+<meta property="og:url" content="https://blog.puchao.cc/2019/06/05/Vue 的学习之路（一）/index.html">
+<meta property="og:site_name" content="Dylan&#39;s Blog">
+<meta property="og:description" content="一个人真正的智慧，是用积极的心态，专注于自己喜欢的事，别人怎么说，怎么看，都不重要，重要的是要活出自己。    自学前端以来，听到最多的就是框架，今天就开始学习最火的框架 –  Vue.js  Vue 简介">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2020-03-07T03:57:33.032Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Vue 的学习之路（一）">
+<meta name="twitter:description" content="一个人真正的智慧，是用积极的心态，专注于自己喜欢的事，别人怎么说，怎么看，都不重要，重要的是要活出自己。    自学前端以来，听到最多的就是框架，今天就开始学习最火的框架 –  Vue.js  Vue 简介">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"right","display":"always","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://blog.puchao.cc/2019/06/05/Vue 的学习之路（一）/">
+
+
+
+
+
+  <title>Vue 的学习之路（一） | Dylan's Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+
+<a href="https://github.com/Dylan1201" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Dylan's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">记录、分享、交流</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br>
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://blog.puchao.cc/2019/06/05/Vue 的学习之路（一）/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Dylan">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Dylan's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Vue 的学习之路（一）</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-05T23:04:37+08:00">
+                2019-06-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/Vue/" itemprop="url" rel="index">
+                    <span itemprop="name">Vue</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+
+
+
+         <span class="post-time">
+       &nbsp; | &nbsp;
+           <span class="post-meta-item-icon">
+             <i class="fa fa-calendar-o"></i>
+           </span>
+           <span class="post-meta-item-text">字数统计:</span>
+           <span class="post-count">1.5k(字)</span>
+
+         </span>
+
+      <span class="post-time">
+       &nbsp; | &nbsp;
+           <span class="post-meta-item-icon">
+             <i class="fa fa-calendar-o"></i>
+           </span>
+           <span class="post-meta-item-text">阅读时长:</span>
+           <span class="post-count">7(分)</span>
+
+         </span>
+
+
+
+
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv">本文总阅读量 <i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote class="blockquote-center">一个人真正的智慧，是用积极的心态，专注于自己喜欢的事，别人怎么说，怎么看，都不重要，重要的是要活出自己。</blockquote>
+
+
+<blockquote>
+<p>自学前端以来，听到最多的就是框架，今天就开始学习最火的框架 –  Vue.js</p>
+</blockquote>
+<h3 id="Vue-简介"><a href="#Vue-简介" class="headerlink" title="Vue 简介"></a>Vue 简介</h3><blockquote>
+<a id="more"></a>
+<p>Vue (读音 /vjuː/，类似于 <strong>view</strong>) 是一套用于构建用户界面的<strong>渐进式框架</strong>。与其它大型框架不同的是，Vue 被设计为可以自底向上逐层应用。Vue 的核心库只关注视图层，不仅易于上手，还便于与第三方库或既有项目整合。另一方面，当与<a href="https://cn.vuejs.org/v2/guide/single-file-components.html" target="_blank" rel="noopener">现代化的工具链</a>以及各种<a href="https://github.com/vuejs/awesome-vue#libraries--plugins" target="_blank" rel="noopener">支持类库</a>结合使用时，Vue 也完全能够为复杂的单页应用提供驱动。</p>
+<p>(以上内容都是官网复制的！！！)</p>
+</blockquote>
+<h2 id="一、Vue-安装"><a href="#一、Vue-安装" class="headerlink" title="一、Vue 安装"></a>一、Vue 安装</h2><h4 id="1-直接用标签引入"><a href="#1-直接用标签引入" class="headerlink" title="1. 直接用标签引入"></a>1. 直接用<script>标签引入</h4><h5 id="CDN"><a href="#CDN" class="headerlink" title="CDN"></a>CDN</h5><ol>
+<li><p>对于制作原型或学习 </p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdn.jsdelivr.net/npm/vue"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<ol start="2">
+<li><p>对于生产环境</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h5 id="NPM"><a href="#NPM" class="headerlink" title="NPM"></a>NPM</h5><ul>
+<li><p>用 Vue 构建大型应用时推荐使用 NPM 安装</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> npm install vue</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="2-直接下载本地引入"><a href="#2-直接下载本地引入" class="headerlink" title="2. 直接下载本地引入"></a>2. 直接下载本地引入</h3><ul>
+<li>点击[Vue.js][<a href="http://www.puchao.cc/Vue.js">http://www.puchao.cc/Vue.js</a> ]下载</li>
+</ul>
+<h2 id="二、Vue创建第一个实例"><a href="#二、Vue创建第一个实例" class="headerlink" title="二、Vue创建第一个实例"></a>二、Vue创建第一个实例</h2><ol>
+<li><p>先引入本地的Vue.js 或者使用外链引入</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--本地引入--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"vue.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span> </span><br><span class="line"><span class="comment">&lt;!--外联引入--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdn.jsdelivr.net/npm/vue"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>创建HTML代码</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 创建数据显示区域 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- 使用插值表达式来显示我们需要在此处显示的数据 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span>&#123;&#123; msg &#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<ol start="3">
+<li><p>创建自己的JavaScript代码,然后创建一个Vue对象</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    <span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">        el: <span class="string">'#app'</span>, <span class="comment">// 此处为要控制的区域 ID为app的标签</span></span><br><span class="line">        data: &#123; <span class="comment">// 此处为数据</span></span><br><span class="line">            msg: <span class="string">'欢迎学习Vue'</span> <span class="comment">//此处为要在标签中显示的信息</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>自此，第一个Vue简单实例完成，想想还是非常简单的</p>
+</li>
+</ol>
+<h2 id="三、简单指令的学习"><a href="#三、简单指令的学习" class="headerlink" title="三、简单指令的学习"></a>三、简单指令的学习</h2><h3 id="1-v-cloak-指令的学习"><a href="#1-v-cloak-指令的学习" class="headerlink" title="1. v-cloak 指令的学习"></a>1. v-cloak 指令的学习</h3><blockquote>
+<p>作用：解决插值表达式的闪烁问题</p>
+<p>当我们网速过慢时，插值表达式会显示在页面中，使用v-cloak可以解决此问题</p>
+</blockquote>
+<p>HTML代码</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span> <span class="attr">v-cloak</span>&gt;</span>&#123;&#123; msg &#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>Css 代码</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="selector-tag">style</span>&gt;</span><br><span class="line">	<span class="comment">/* 此代码是为了解决插值表达是闪烁问题--&gt; */</span></span><br><span class="line">    <span class="selector-attr">[v-cloak]</span>&#123;</span><br><span class="line">        <span class="attribute">display</span>: none;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+<p>JavaScript代码</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    <span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">        el: <span class="string">'#app'</span>,</span><br><span class="line">        data: &#123;</span><br><span class="line">            msg: <span class="string">'Vue学习之 v-cloak'</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="2-v-text-指令的学习"><a href="#2-v-text-指令的学习" class="headerlink" title="2. v-text 指令的学习"></a>2. v-text 指令的学习</h3><blockquote>
+<p>作用：可以代替插值表达式</p>
+<p>区别：</p>
+<p>​    1. 默认v-text没有闪烁问题</p>
+<pre><code>2. v-text会覆盖原来元素中的内容
+</code></pre></blockquote>
+<p>HTML代码</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span> <span class="attr">v-text</span>=<span class="string">"msg"</span>&gt;</span>--------<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>JavaScript代码</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    <span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">        el: <span class="string">'#app'</span>,</span><br><span class="line">        data: &#123;</span><br><span class="line">            msg: <span class="string">'Vue学习之 v-text'</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="3-v-html-指令的学习"><a href="#3-v-html-指令的学习" class="headerlink" title="3. v-html 指令的学习"></a>3. v-html 指令的学习</h3><blockquote>
+<p>作用：可以解析msg中的HTML标签，也会覆盖原来元素中的内容</p>
+</blockquote>
+<p>HTML代码</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span> <span class="attr">v-html</span>=<span class="string">"msg"</span>&gt;</span>--------<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>JavaScript代码</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    <span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">        el: <span class="string">'#app'</span>,</span><br><span class="line">        data: &#123;</span><br><span class="line">            msg: <span class="string">'&lt;h1&gt;Vue学习之 v-text&lt;/h1&gt;'</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="4-v-bind-指令的学习"><a href="#4-v-bind-指令的学习" class="headerlink" title="4. v-bind 指令的学习"></a>4. v-bind 指令的学习</h3><blockquote>
+<p>作用：Vue提供的用于绑定属性的指令</p>
+</blockquote>
+<p>HTML代码</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">v-bind:title</span>=<span class="string">"mytitle"</span> <span class="attr">value</span>=<span class="string">"Enter"</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--    简写方式，可以省略v-bind--&gt;</span></span><br><span class="line">  		<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">:title</span>=<span class="string">"mytitle"</span> <span class="attr">value</span>=<span class="string">"Enter"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>JavaScript代码</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    <span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">        el: <span class="string">'#app'</span>,</span><br><span class="line">        data: &#123;</span><br><span class="line">            mytitle: <span class="string">'这是自定义的title'</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="5-v-on-指令的学习"><a href="#5-v-on-指令的学习" class="headerlink" title="5. v-on 指令的学习"></a>5. v-on 指令的学习</h3><blockquote>
+<p>作用：Vue提供的用于绑定事件，JS常用的事件都可以绑定，例如click <em>，</em>onmousover<em>等，常用的还是</em>click</p>
+<p>注意：v-on指令要在新的方法 <em>methods</em> 中使用</p>
+</blockquote>
+<p>HTML代码</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- 此处的click可以为其他事件 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">value</span>=<span class="string">"Enter"</span> <span class="attr">v-on:click</span>=<span class="string">"show"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>JavaScript代码</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    <span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">        el: <span class="string">'#app'</span>,</span><br><span class="line">        methods: &#123;</span><br><span class="line">            show: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                alert(<span class="string">'Hello'</span>)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="四、本节中所有代码整合如下"><a href="#四、本节中所有代码整合如下" class="headerlink" title="四、本节中所有代码整合如下"></a>四、本节中所有代码整合如下</h2><p>HTML + css + JavaScript代码</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Vue简单指令的学习<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"vue.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css">        <span class="selector-attr">[v-cloak]</span>&#123;</span></span><br><span class="line"><span class="undefined">            display: none;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h2</span>&gt;</span>指令1：v-cloak解决插值表达式闪烁问题<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span> <span class="attr">v-cloak</span>&gt;</span>-----&#123;&#123; msg &#125;&#125;-----<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h2</span>&gt;</span>指令2：v-text 也可以解决插值表达式闪烁问题，但是它会覆盖原来元素中的内容<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span> <span class="attr">v-text</span>=<span class="string">"msg2"</span>&gt;</span>--------<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h2</span>&gt;</span>指令3：v-html 可以解析HTML标签<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span> <span class="attr">v-html</span>=<span class="string">"msg3"</span>&gt;</span>--------<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h2</span>&gt;</span>指令4：v-bind 可以绑定属性<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">v-bind:title</span>=<span class="string">"mytitle"</span> <span class="attr">value</span>=<span class="string">"Enter"</span>&gt;</span><span class="tag">&lt;/<span class="name">br</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--    简写方式，可以省略v-bind--&gt;</span></span><br><span class="line"><span class="comment">&lt;!--    v-bind中可以写合法的JS表达式--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h4</span>&gt;</span>指令4的简写方式 : <span class="tag">&lt;/<span class="name">h4</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">:title</span>=<span class="string">"mytitle + '123'"</span> <span class="attr">value</span>=<span class="string">"Enter"</span>&gt;</span><span class="tag">&lt;/<span class="name">br</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h2</span>&gt;</span>指令5：v-on 用于绑定事件<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">value</span>=<span class="string">"Enter"</span> <span class="attr">v-on:click</span>=<span class="string">"show"</span>&gt;</span><span class="tag">&lt;/<span class="name">br</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--简写方式，可以将v-on替换为 @ 符号--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h4</span>&gt;</span>指令5的简写方式 @ <span class="tag">&lt;/<span class="name">h4</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">value</span>=<span class="string">"Enter"</span> @<span class="attr">click</span>=<span class="string">"show"</span>&gt;</span><span class="tag">&lt;/<span class="name">br</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;</span></span><br><span class="line"><span class="javascript">        el: <span class="string">'#app'</span>,</span></span><br><span class="line"><span class="undefined">        data: &#123;</span></span><br><span class="line"><span class="javascript">            msg: <span class="string">'Vue学习之 v-cloak'</span>,</span></span><br><span class="line"><span class="javascript">            msg2: <span class="string">'Vue学习之 v-text'</span>,</span></span><br><span class="line"><span class="xml">            msg3: '<span class="tag">&lt;<span class="name">h1</span>&gt;</span>Vue学习之 v-html<span class="tag">&lt;/<span class="name">h1</span>&gt;</span>',</span></span><br><span class="line"><span class="javascript">            mytitle: <span class="string">'这是自定义的title'</span></span></span><br><span class="line"><span class="undefined">        &#125;,</span></span><br><span class="line"><span class="undefined">        methods: &#123;</span></span><br><span class="line"><span class="javascript">            show: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">                alert(<span class="string">'Hello'</span>)</span></span><br><span class="line"><span class="undefined">            &#125;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">    &#125;)</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</script></h4>
+      
+    </div>
+    
+    
+    
+
+<div>
+      
+        
+<div class="my_post_copyright">
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+  <!-- JS库 sweetalert 可修改路径 -->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://cdn.bootcss.com/sweetalert/1.1.3/sweetalert.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/sweetalert/1.1.3/sweetalert.min.css">
+  <p><span>本文标题:</span><a href="/2019/06/05/Vue 的学习之路（一）/">Vue 的学习之路（一）</a></p>
+  <p><span>文章作者:</span><a href="/" title="访问 Dylan 的个人博客">Dylan</a></p>
+  <p><span>发布时间:</span>2019年06月05日 - 23:06</p>
+  <p><span>最后更新:</span>2020年03月07日 - 11:03</p>
+  <p>
+    <span>原始链接:</span><a href="/2019/06/05/Vue 的学习之路（一）/" title="Vue 的学习之路（一）">https://blog.puchao.cc/2019/06/05/Vue 的学习之路（一）/</a>
+    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://blog.puchao.cc/2019/06/05/Vue 的学习之路（一）/" aria-label="复制成功！"></i></span>
+  </p>
+  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i><a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>
+</div>
+<script>
+    var clipboard = new Clipboard('.fa-clipboard');
+    clipboard.on('success', $(function(){
+      $(".fa-clipboard").click(function(){
+        swal({
+          title: "",
+          text: '复制成功',
+          html: false,
+          timer: 700,
+          showConfirmButton: false
+        });
+      });
+    }));
+</script>
+
+
+      
+</div>
+
+
+    
+
+    
+
+    
+
+<div>
+  
+    <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+
+  
+</div>
+
+
+
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Vue/" rel="tag"><i class="fa fa-tag"></i> Vue</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/05/26/基础方法集合/" rel="next" title="JavaScript基础方法集合">
+                <i class="fa fa-chevron-left"></i> JavaScript基础方法集合
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/07/26/HTML之清除浮动/" rel="prev" title="HTML之清除浮动">
+                HTML之清除浮动 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Dylan">
+            
+              <p class="site-author-name" itemprop="name">Dylan</p>
+              <p class="site-description motion-element" itemprop="description">Don't go through life, grow through life.</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/Dylan1201" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i></a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:dylan@puchao.cc" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i></a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://plus.google.com/dylanpu6" target="_blank" title="Google">
+                      
+                        <i class="fa fa-fw fa-google"></i></a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://twitter.com/Dylan87571834" target="_blank" title="Twitter">
+                      
+                        <i class="fa fa-fw fa-twitter"></i></a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://qq.com" target="_blank" title="QQ">
+                      
+                        <i class="fa fa-fw fa-qq"></i></a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="/ /" target="_blank" title="wechat">
+                      
+                        <i class="fa fa-fw fa-wechat"></i></a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Vue-简介"><span class="nav-number">1.</span> <span class="nav-text">Vue 简介</span></a></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#一、Vue-安装"><span class="nav-number"></span> <span class="nav-text">一、Vue 安装</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-直接用标签引入"><span class="nav-number">0.1.</span> <span class="nav-text">1. 直接用标签引入&lt;/h4&gt;&lt;h5 id=&quot;CDN&quot;&gt;&lt;a href=&quot;#CDN&quot; class=&quot;headerlink&quot; title=&quot;CDN&quot;&gt;&lt;/a&gt;CDN&lt;/h5&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;对于制作原型或学习 &lt;/p&gt;
+&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;script&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;src&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;https://cdn.jsdelivr.net/npm/vue&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;undefined&quot;&gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;script&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ol start=&quot;2&quot;&gt;
+&lt;li&gt;&lt;p&gt;对于生产环境&lt;/p&gt;
+&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;script&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;src&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;undefined&quot;&gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;script&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h5 id=&quot;NPM&quot;&gt;&lt;a href=&quot;#NPM&quot; class=&quot;headerlink&quot; title=&quot;NPM&quot;&gt;&lt;/a&gt;NPM&lt;/h5&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;用 Vue 构建大型应用时推荐使用 NPM 安装&lt;/p&gt;
+&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;$&lt;/span&gt; npm install vue&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;2-直接下载本地引入&quot;&gt;&lt;a href=&quot;#2-直接下载本地引入&quot; class=&quot;headerlink&quot; title=&quot;2. 直接下载本地引入&quot;&gt;&lt;/a&gt;2. 直接下载本地引入&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;点击[Vue.js][&lt;a href=&quot;http://www.puchao.cc/Vue.js&quot;&gt;http://www.puchao.cc/Vue.js&lt;/a&gt; ]下载&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;二、Vue创建第一个实例&quot;&gt;&lt;a href=&quot;#二、Vue创建第一个实例&quot; class=&quot;headerlink&quot; title=&quot;二、Vue创建第一个实例&quot;&gt;&lt;/a&gt;二、Vue创建第一个实例&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;先引入本地的Vue.js 或者使用外链引入&lt;/p&gt;
+&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;&amp;lt;!--本地引入--&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;script&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;src&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;vue.js&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;undefined&quot;&gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;script&lt;/span&gt;&amp;gt;&lt;/span&gt; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;&amp;lt;!--外联引入--&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;script&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;src&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;https://cdn.jsdelivr.net/npm/vue&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;undefined&quot;&gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;script&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;创建HTML代码&lt;/p&gt;
+&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;body&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;&amp;lt;!-- 创建数据显示区域 --&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;id&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;app&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;comment&quot;&gt;&amp;lt;!-- 使用插值表达式来显示我们需要在此处显示的数据 --&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;p&lt;/span&gt;&amp;gt;&lt;/span&gt;&amp;#123;&amp;#123; msg &amp;#125;&amp;#125;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;p&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;body&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ol start=&quot;3&quot;&gt;
+&lt;li&gt;&lt;p&gt;创建自己的JavaScript代码,然后创建一个Vue对象&lt;/p&gt;
+&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;script&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; vm = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; Vue(&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        el: &lt;span class=&quot;string&quot;&gt;&#39;#app&#39;&lt;/span&gt;, &lt;span class=&quot;comment&quot;&gt;// 此处为要控制的区域 ID为app的标签&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        data: &amp;#123; &lt;span class=&quot;comment&quot;&gt;// 此处为数据&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            msg: &lt;span class=&quot;string&quot;&gt;&#39;欢迎学习Vue&#39;&lt;/span&gt; &lt;span class=&quot;comment&quot;&gt;//此处为要在标签中显示的信息&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;&lt;span class=&quot;regexp&quot;&gt;/script&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;自此，第一个Vue简单实例完成，想想还是非常简单的&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&quot;三、简单指令的学习&quot;&gt;&lt;a href=&quot;#三、简单指令的学习&quot; class=&quot;headerlink&quot; title=&quot;三、简单指令的学习&quot;&gt;&lt;/a&gt;三、简单指令的学习&lt;/h2&gt;&lt;h3 id=&quot;1-v-cloak-指令的学习&quot;&gt;&lt;a href=&quot;#1-v-cloak-指令的学习&quot; class=&quot;headerlink&quot; title=&quot;1. v-cloak 指令的学习&quot;&gt;&lt;/a&gt;1. v-cloak 指令的学习&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;作用：解决插值表达式的闪烁问题&lt;/p&gt;
+&lt;p&gt;当我们网速过慢时，插值表达式会显示在页面中，使用v-cloak可以解决此问题&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;HTML代码&lt;/p&gt;
+&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;body&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;id&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;app&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;p&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;v-cloak&lt;/span&gt;&amp;gt;&lt;/span&gt;&amp;#123;&amp;#123; msg &amp;#125;&amp;#125;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;p&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;body&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;Css 代码&lt;/p&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;&lt;span class=&quot;selector-tag&quot;&gt;style&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;comment&quot;&gt;/* 此代码是为了解决插值表达是闪烁问题--&amp;gt; */&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;selector-attr&quot;&gt;[v-cloak]&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;attribute&quot;&gt;display&lt;/span&gt;: none;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;/style&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;JavaScript代码&lt;/p&gt;
+&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;script&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; vm = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; Vue(&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        el: &lt;span class=&quot;string&quot;&gt;&#39;#app&#39;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        data: &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            msg: &lt;span class=&quot;string&quot;&gt;&#39;Vue学习之 v-cloak&#39;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;&lt;span class=&quot;regexp&quot;&gt;/script&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;2-v-text-指令的学习&quot;&gt;&lt;a href=&quot;#2-v-text-指令的学习&quot; class=&quot;headerlink&quot; title=&quot;2. v-text 指令的学习&quot;&gt;&lt;/a&gt;2. v-text 指令的学习&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;作用：可以代替插值表达式&lt;/p&gt;
+&lt;p&gt;区别：&lt;/p&gt;
+&lt;p&gt;​    1. 默认v-text没有闪烁问题&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;2. v-text会覆盖原来元素中的内容
+&lt;/code&gt;&lt;/pre&gt;&lt;/blockquote&gt;
+&lt;p&gt;HTML代码&lt;/p&gt;
+&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;body&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;id&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;app&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;p&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;v-text&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;msg&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;--------&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;p&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;body&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;JavaScript代码&lt;/p&gt;
+&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;script&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; vm = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; Vue(&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        el: &lt;span class=&quot;string&quot;&gt;&#39;#app&#39;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        data: &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            msg: &lt;span class=&quot;string&quot;&gt;&#39;Vue学习之 v-text&#39;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;&lt;span class=&quot;regexp&quot;&gt;/script&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;3-v-html-指令的学习&quot;&gt;&lt;a href=&quot;#3-v-html-指令的学习&quot; class=&quot;headerlink&quot; title=&quot;3. v-html 指令的学习&quot;&gt;&lt;/a&gt;3. v-html 指令的学习&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;作用：可以解析msg中的HTML标签，也会覆盖原来元素中的内容&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;HTML代码&lt;/p&gt;
+&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;body&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;id&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;app&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;p&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;v-html&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;msg&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;--------&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;p&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;body&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;JavaScript代码&lt;/p&gt;
+&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;script&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; vm = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; Vue(&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        el: &lt;span class=&quot;string&quot;&gt;&#39;#app&#39;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        data: &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            msg: &lt;span class=&quot;string&quot;&gt;&#39;&amp;lt;h1&amp;gt;Vue学习之 v-text&amp;lt;/h1&amp;gt;&#39;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;&lt;span class=&quot;regexp&quot;&gt;/script&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;4-v-bind-指令的学习&quot;&gt;&lt;a href=&quot;#4-v-bind-指令的学习&quot; class=&quot;headerlink&quot; title=&quot;4. v-bind 指令的学习&quot;&gt;&lt;/a&gt;4. v-bind 指令的学习&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;作用：Vue提供的用于绑定属性的指令&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;HTML代码&lt;/p&gt;
+&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;body&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;id&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;app&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;input&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;type&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;button&quot;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;v-bind:title&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;mytitle&quot;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;value&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;Enter&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;comment&quot;&gt;&amp;lt;!--    简写方式，可以省略v-bind--&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  		&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;input&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;type&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;button&quot;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;:title&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;mytitle&quot;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;value&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;Enter&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;body&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;JavaScript代码&lt;/p&gt;
+&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;script&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; vm = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; Vue(&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        el: &lt;span class=&quot;string&quot;&gt;&#39;#app&#39;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        data: &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            mytitle: &lt;span class=&quot;string&quot;&gt;&#39;这是自定义的title&#39;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;&lt;span class=&quot;regexp&quot;&gt;/script&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;5-v-on-指令的学习&quot;&gt;&lt;a href=&quot;#5-v-on-指令的学习&quot; class=&quot;headerlink&quot; title=&quot;5. v-on 指令的学习&quot;&gt;&lt;/a&gt;5. v-on 指令的学习&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;作用：Vue提供的用于绑定事件，JS常用的事件都可以绑定，例如click &lt;em&gt;，&lt;/em&gt;onmousover&lt;em&gt;等，常用的还是&lt;/em&gt;click&lt;/p&gt;
+&lt;p&gt;注意：v-on指令要在新的方法 &lt;em&gt;methods&lt;/em&gt; 中使用&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;HTML代码&lt;/p&gt;
+&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;body&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;id&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;app&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;comment&quot;&gt;&amp;lt;!-- 此处的click可以为其他事件 --&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;input&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;type&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;button&quot;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;value&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;Enter&quot;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;v-on:click&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;show&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;body&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;JavaScript代码&lt;/p&gt;
+&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;script&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; vm = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; Vue(&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        el: &lt;span class=&quot;string&quot;&gt;&#39;#app&#39;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        methods: &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            show: &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                alert(&lt;span class=&quot;string&quot;&gt;&#39;Hello&#39;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;&lt;span class=&quot;regexp&quot;&gt;/script&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&quot;四、本节中所有代码整合如下&quot;&gt;&lt;a href=&quot;#四、本节中所有代码整合如下&quot; class=&quot;headerlink&quot; title=&quot;四、本节中所有代码整合如下&quot;&gt;&lt;/a&gt;四、本节中所有代码整合如下&lt;/h2&gt;&lt;p&gt;HTML + css + JavaScript代码&lt;/p&gt;
+&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;33&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;34&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;35&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;36&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;37&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;38&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;39&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;40&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;41&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;42&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;43&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;44&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;45&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;46&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;47&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;48&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;49&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;50&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;51&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;html&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;lang&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;en&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;head&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;meta&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;charset&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;UTF-8&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;title&lt;/span&gt;&amp;gt;&lt;/span&gt;Vue简单指令的学习&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;title&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;script&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;src&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;vue.js&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;undefined&quot;&gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;script&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;style&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;undefined&quot;&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;css&quot;&gt;        &lt;span class=&quot;selector-attr&quot;&gt;[v-cloak]&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;undefined&quot;&gt;            display: none;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;undefined&quot;&gt;        &amp;#125;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;undefined&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;style&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;head&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;body&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;id&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;app&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;h2&lt;/span&gt;&amp;gt;&lt;/span&gt;指令1：v-cloak解决插值表达式闪烁问题&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;h2&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;p&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;v-cloak&lt;/span&gt;&amp;gt;&lt;/span&gt;-----&amp;#123;&amp;#123; msg &amp;#125;&amp;#125;-----&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;p&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;h2&lt;/span&gt;&amp;gt;&lt;/span&gt;指令2：v-text 也可以解决插值表达式闪烁问题，但是它会覆盖原来元素中的内容&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;h2&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;p&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;v-text&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;msg2&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;--------&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;p&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;h2&lt;/span&gt;&amp;gt;&lt;/span&gt;指令3：v-html 可以解析HTML标签&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;h2&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;p&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;v-html&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;msg3&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;--------&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;p&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;h2&lt;/span&gt;&amp;gt;&lt;/span&gt;指令4：v-bind 可以绑定属性&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;h2&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;input&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;type&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;button&quot;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;v-bind:title&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;mytitle&quot;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;value&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;Enter&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;br&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;&amp;lt;!--    简写方式，可以省略v-bind--&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;&amp;lt;!--    v-bind中可以写合法的JS表达式--&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;h4&lt;/span&gt;&amp;gt;&lt;/span&gt;指令4的简写方式 : &lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;h4&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;input&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;type&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;button&quot;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;:title&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;mytitle + &#39;123&#39;&quot;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;value&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;Enter&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;br&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;h2&lt;/span&gt;&amp;gt;&lt;/span&gt;指令5：v-on 用于绑定事件&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;h2&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;input&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;type&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;button&quot;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;value&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;Enter&quot;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;v-on:click&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;show&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;br&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;&amp;lt;!--简写方式，可以将v-on替换为 @ 符号--&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;h4&lt;/span&gt;&amp;gt;&lt;/span&gt;指令5的简写方式 @ &lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;h4&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;input&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;type&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;button&quot;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;value&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;Enter&quot;&lt;/span&gt; @&lt;span class=&quot;attr&quot;&gt;click&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;show&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;br&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;body&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;script&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;undefined&quot;&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;javascript&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; vm = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; Vue(&amp;#123;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;javascript&quot;&gt;        el: &lt;span class=&quot;string&quot;&gt;&#39;#app&#39;&lt;/span&gt;,&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;undefined&quot;&gt;        data: &amp;#123;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;javascript&quot;&gt;            msg: &lt;span class=&quot;string&quot;&gt;&#39;Vue学习之 v-cloak&#39;&lt;/span&gt;,&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;javascript&quot;&gt;            msg2: &lt;span class=&quot;string&quot;&gt;&#39;Vue学习之 v-text&#39;&lt;/span&gt;,&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;xml&quot;&gt;            msg3: &#39;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;h1&lt;/span&gt;&amp;gt;&lt;/span&gt;Vue学习之 v-html&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;h1&lt;/span&gt;&amp;gt;&lt;/span&gt;&#39;,&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;javascript&quot;&gt;            mytitle: &lt;span class=&quot;string&quot;&gt;&#39;这是自定义的title&#39;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;undefined&quot;&gt;        &amp;#125;,&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;undefined&quot;&gt;        methods: &amp;#123;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;javascript&quot;&gt;            show: &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;javascript&quot;&gt;                alert(&lt;span class=&quot;string&quot;&gt;&#39;Hello&#39;&lt;/span&gt;)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;undefined&quot;&gt;            &amp;#125;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;undefined&quot;&gt;        &amp;#125;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;undefined&quot;&gt;    &amp;#125;)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;undefined&quot;&gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;script&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;html&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+</span></a></li></ol></li></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; 2018 &mdash; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-star"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Dylan</span>
+
+  
+</div>
+
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      本站访客数 <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      本站总访问量 <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+  
+  
+    <script id="ribbon" type="text/javascript" size="3000" alpha="0.1" zindex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  undefined
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>
