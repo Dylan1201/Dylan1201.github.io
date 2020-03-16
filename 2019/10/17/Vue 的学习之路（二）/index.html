@@ -105,19 +105,19 @@
 
 
 
-<meta name="description" content="只有不断找寻机会的人才会及时把握机会，越努力，越幸运。 一、过滤器 filter 的学习 注意：vue的过滤器有两种，一种是全局的，一种是私有的（局部的），全局的写法是：filter:{} 而局部的写法是：filters:{}   1. 用法一：在双括号里插值1&amp;#123;&amp;#123; &amp;apos;ok&amp;apos; | globalFilter &amp;#125;&amp;#125; 用法二：在v-bind表达">
+<meta name="description" content="只有不断找寻机会的人才会及时把握机会，越努力，越幸运。 一、过滤器 filter 的学习 注意：vue的过滤器有两种，一种是全局的，一种是私有的（局部的），全局的写法是：filter:{}，而局部的写法是：filters:{}">
 <meta name="keywords" content="Vue">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Vue 的学习之路（二）">
 <meta property="og:url" content="https://blog.puchao.cc/2019/10/17/Vue 的学习之路（二）/index.html">
 <meta property="og:site_name" content="Dylan&#39;s Blog">
-<meta property="og:description" content="只有不断找寻机会的人才会及时把握机会，越努力，越幸运。 一、过滤器 filter 的学习 注意：vue的过滤器有两种，一种是全局的，一种是私有的（局部的），全局的写法是：filter:{} 而局部的写法是：filters:{}   1. 用法一：在双括号里插值1&amp;#123;&amp;#123; &amp;apos;ok&amp;apos; | globalFilter &amp;#125;&amp;#125; 用法二：在v-bind表达">
+<meta property="og:description" content="只有不断找寻机会的人才会及时把握机会，越努力，越幸运。 一、过滤器 filter 的学习 注意：vue的过滤器有两种，一种是全局的，一种是私有的（局部的），全局的写法是：filter:{}，而局部的写法是：filters:{}">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://blogimage.puchao.cc/Vue%20%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%87%BD%E6%95%B0.png">
-<meta property="og:updated_time" content="2020-03-07T04:27:53.945Z">
+<meta property="og:updated_time" content="2020-03-16T06:32:20.617Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Vue 的学习之路（二）">
-<meta name="twitter:description" content="只有不断找寻机会的人才会及时把握机会，越努力，越幸运。 一、过滤器 filter 的学习 注意：vue的过滤器有两种，一种是全局的，一种是私有的（局部的），全局的写法是：filter:{} 而局部的写法是：filters:{}   1. 用法一：在双括号里插值1&amp;#123;&amp;#123; &amp;apos;ok&amp;apos; | globalFilter &amp;#125;&amp;#125; 用法二：在v-bind表达">
+<meta name="twitter:description" content="只有不断找寻机会的人才会及时把握机会，越努力，越幸运。 一、过滤器 filter 的学习 注意：vue的过滤器有两种，一种是全局的，一种是私有的（局部的），全局的写法是：filter:{}，而局部的写法是：filters:{}">
 <meta name="twitter:image" content="http://blogimage.puchao.cc/Vue%20%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%87%BD%E6%95%B0.png">
 
 
@@ -459,9 +459,7 @@
       
         <p><blockquote class="blockquote-center">只有不断找寻机会的人才会及时把握机会，越努力，越幸运。</blockquote></p>
 <h2 id="一、过滤器-filter-的学习"><a href="#一、过滤器-filter-的学习" class="headerlink" title="一、过滤器 filter 的学习"></a>一、过滤器 <em>filter</em> 的学习</h2><ul>
-<li><p>注意：vue的过滤器有两种，一种是全局的，一种是私有的（局部的），全局的写法是：filter:{}</p>
-<p>而局部的写法是：filters:{}</p>
-</li>
+<li>注意：vue的过滤器有两种，一种是全局的，一种是私有的（局部的），全局的写法是：filter:{}，而局部的写法是：filters:{}<a id="more"></a></li>
 </ul>
 <h3 id="1-用法一：在双括号里插值"><a href="#1-用法一：在双括号里插值" class="headerlink" title="1. 用法一：在双括号里插值"></a>1. 用法一：在双括号里插值</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123; &apos;ok&apos; | globalFilter &#125;&#125;</span><br></pre></td></tr></table></figure>
 <h4 id="用法二：在v-bind表达式中使用"><a href="#用法二：在v-bind表达式中使用" class="headerlink" title="用法二：在v-bind表达式中使用"></a>用法二：在v-bind表达式中使用</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div v-bind:data=&quot;&apos;ok&apos; | globalFilter&quot; &gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure>
@@ -529,7 +527,7 @@
   <p><span>本文标题:</span><a href="/2019/10/17/Vue 的学习之路（二）/">Vue 的学习之路（二）</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 Dylan 的个人博客">Dylan</a></p>
   <p><span>发布时间:</span>2019年10月17日 - 11:10</p>
-  <p><span>最后更新:</span>2020年03月07日 - 12:03</p>
+  <p><span>最后更新:</span>2020年03月16日 - 14:03</p>
   <p>
     <span>原始链接:</span><a href="/2019/10/17/Vue 的学习之路（二）/" title="Vue 的学习之路（二）">https://blog.puchao.cc/2019/10/17/Vue 的学习之路（二）/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://blog.puchao.cc/2019/10/17/Vue 的学习之路（二）/" aria-label="复制成功！"></i></span>
